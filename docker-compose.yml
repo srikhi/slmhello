@@ -1,0 +1,50 @@
+version: '2'  
+services:  
+  db:
+    image: postgres:latest
+    container_name: postgresdb01
+    hostname: slmdbhost
+    restart: always
+    environment:
+      POSTGRES_USER: slmuser
+      POSTGRES_PASSWORD: slmpass
+      POSTGRES_DB: slmdb
+    network_mode: host
+
+  slmweb:
+    build: .
+    image: sandeep/slmweb
+    container_name: slmwebapp
+    network_mode: host
+    restart: always
+    command: python manage.py runserver 0.0.0.0:7777
+    hostname: slmweb
+    extra_hosts:
+      - "slmdbhost: 192.168.203.121"
+    depends_on:
+      - db
+    volumes:
+      - ./src:/src
+    expose:
+      - "7777"
+    environment:
+      POSTGRES_USER: slmuser
+      POSTGRES_PASSWORD: slmpass
+      POSTGRES_DB: slmdb
+      WAIT_HOSTS: "slmdbhost:5432"
+      WAIT_TIMEOUT: 120
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx01
+    network_mode: host
+    restart: always
+    volumes:
+      - ./src:/src
+      - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - slmweb
+    extra_hosts:
+      - "slmweb: 192.168.203.121"
+    expose:
+      - "8888"

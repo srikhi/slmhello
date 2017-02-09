@@ -1,0 +1,15 @@
+version: '2'  
+services:  
+  db:
+    image: postgres:latest
+    container_name: postgresdb01
+    hostname: slmdbhost
+    environment:
+      POSTGRES_USER: slmuser
+      POSTGRES_PASSWORD: slmpass
+      POSTGRES_DB: slmdb
+    network_mode: host
+#    ports:
+#      - "5432:5432"
+#    expose:
+#      - "5432"
