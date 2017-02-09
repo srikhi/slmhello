@@ -1,0 +1,14 @@
+version: '2'  
+services:  
+  redisdata:
+    image: redis:latest
+    network_mode: host
+    volumes:
+      - /var/lib/redis
+    command: "true"
+  redis:
+    image: redis:latest
+    volumes_from:
+      - redisdata
+    network_mode: host
+
