@@ -37,8 +37,39 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'helloslmapp',
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s %(levelname)s ' +
+                      '<%(process)d.%(threadName)s> [%(name)s] %(message)s',
+            'datefmt': '%Y-%m-%dT%H:%M:%S%z'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('SLMWEBSITE_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework.filters.DjangoFilterBackend',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +82,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'slmwebsite.urls'
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'slmwebsite', 'templates'),
+)
 
 TEMPLATES = [
     {
@@ -81,7 +116,7 @@ DATABASES = {
          'NAME': 'slmdb',
          'USER': 'slmuser',
          'PASSWORD': 'slmpass',
-         'HOST': 'slmdbhost',
+         'HOST': '127.0.0.1',
          'PORT': 5432,
      }
 }
@@ -124,3 +159,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
