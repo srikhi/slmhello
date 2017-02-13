@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1:8080',
                  'localhost:8080',
+                 'slmweb',
                 ]
 
 # Application definition
@@ -38,9 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'rest_framework',
+    'permission',
+    'rest_framework',
     'helloslmapp',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'permission.backends.PermissionBackend',
+    )
 
 LOGGING = {
     'version': 1,
@@ -66,13 +72,11 @@ LOGGING = {
     },
 }
 
-"""
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
         'rest_framework.filters.DjangoFilterBackend',
     )
 }
-"""
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
