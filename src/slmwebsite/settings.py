@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'helloslmapp',
 ]
 
+"""
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -71,6 +72,7 @@ REST_FRAMEWORK = {
         'rest_framework.filters.DjangoFilterBackend',
     )
 }
+"""
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,6 +86,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'slmwebsite.urls'
 
+"""
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'slmwebsite', 'templates'),
 )
@@ -103,6 +106,7 @@ TEMPLATES = [
         },
     },
 ]
+"""
 
 WSGI_APPLICATION = 'slmwebsite.wsgi.application'
 
@@ -161,7 +165,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+"""
 try:
     from local_settings import *
 except ImportError:
     pass
+"""
