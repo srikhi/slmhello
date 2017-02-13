@@ -5,6 +5,11 @@ pyyaml==3.12
 django-permission==0.9.3
 django-secure==1.0.1
 django-filter==1.0.1
+django_oauth2_provider==0.2.6.1
+django-oauth-toolkit==0.11.0
+django-social-auth==0.7.28
+django-salesforce==0.6.9
 djangorestframework==3.5.3
-rest-framework-generic-relations==1.1.0
 django-rest-framework-social-oauth2==1.0.5
+rest-framework-generic-relations==1.1.0
+
