@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'helloslmapp',
 ]
 
-"""
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -67,6 +66,7 @@ LOGGING = {
     },
 }
 
+"""
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
         'rest_framework.filters.DjangoFilterBackend',
@@ -86,27 +86,26 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'slmwebsite.urls'
 
-"""
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'slmwebsite', 'templates'),
-)
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'slmwebsite', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+            'builtins': [
+                'permission.templatetags.permissionif',
+            ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
-"""
 
 WSGI_APPLICATION = 'slmwebsite.wsgi.application'
 
@@ -164,10 +163,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static_contents/'
 
-"""
 try:
     from local_settings import *
 except ImportError:
     pass
-"""

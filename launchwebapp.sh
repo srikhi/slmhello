@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 set -u
+find . -name *.pyc -delete
+find /opt/slm/ -name *.pyc -delete
 SCRIPT_NAME=`basename $0`                                                       
 SCRIPT_DIR=`dirname $0`                                                         
 SLM_ROOT=`readlink -f "${SCRIPT_DIR}"`                                   
@@ -10,4 +12,7 @@ ansible-playbook --extra-vars "{ $ANSIBLE_BASE_VARS }" \
     ${ANSIBLE_BASE_ARGS} -i localhost, \
     --sudo  --connection=local \
     $SLM_ROOT/launchwebapp.yml
+
+sudo docker-compose -f /opt/slm/conf/slmwebapp-compose.yml down
+sudo docker-compose -f /opt/slm/conf/slmwebapp-compose.yml up
 

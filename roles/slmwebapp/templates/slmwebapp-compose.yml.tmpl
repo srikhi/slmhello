@@ -5,12 +5,11 @@ services:
     container_name: slmwebapp
     network_mode: host
     restart: always
-    # command: "/src/docker-entrypoint.sh"
     hostname: slmweb
     # We map volume so that the app does not lose migration details
     volumes:
-      - "{{ SLMWEBAPP_ROOT }}/src:/src"
       - "{{ STATIC_CONTENT_FOLDER }}:/static_contents"
+      - "{{ SLMWEBAPP_ROOT }}/src:/src"
     expose:
       - "{{ WEBAPP_HTTP_PORT }}"
     environment:

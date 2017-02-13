@@ -1,7 +1,7 @@
 version: '2'  
 services:  
   db:
-    image: postgres:latest
+    image: postgres:{{ POSTGRES_IMAGE_TAG }}
     container_name: postgresdb01
     hostname: slmdbhost
     restart: always
