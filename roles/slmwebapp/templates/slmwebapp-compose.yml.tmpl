@@ -1,0 +1,19 @@
+version: '2'
+services:
+  slmweb:
+    image: slmweb
+    container_name: slmwebapp
+    network_mode: host
+    restart: always
+    # command: "/src/docker-entrypoint.sh"
+    hostname: slmweb
+    # We map volume so that the app does not lose migration details
+    volumes:
+      - "{{ SLMWEBAPP_ROOT }}/src:/src"
+      - "{{ STATIC_CONTENT_FOLDER }}:/static_contents"
+    expose:
+      - "{{ WEBAPP_HTTP_PORT }}"
+    environment:
+      POSTGRES_USER: slmuser
+      POSTGRES_PASSWORD: slmpass
+      POSTGRES_DB: slmdb

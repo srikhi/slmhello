@@ -1,0 +1,15 @@
+version: '2'  
+services:  
+  nginx:
+    image: "nginx:1.10"
+    container_name: nginx01
+    hostname: slmdevpodnginx.slmlab.com
+    network_mode: host
+    restart: always
+    volumes:
+      - "{{ NGINX_CONF_FOLDER }}:/etc/nginx/conf.d"
+    expose:
+      - "443"
+      - "80"
+    environment:
+      - NGINX_HOST=slmdevpodnginx.slmlab.com

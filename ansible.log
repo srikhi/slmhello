@@ -1,0 +1,861 @@
+2017-02-12 19:48:33,392 p=537 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 19:48:33,412 p=537 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 19:48:33,846 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:33,847 p=537 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 19:48:44,702 p=537 u=ubuntu |  changed: [localhost]
+2017-02-12 19:48:44,705 p=537 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:48:44,905 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:44,906 p=537 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:48:46,000 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:46,003 p=537 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:48:46,105 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:46,108 p=537 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:48:46,213 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:46,214 p=537 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 19:48:46,838 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:46,841 p=537 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 19:48:47,403 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:47,404 p=537 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 19:48:48,036 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:48,039 p=537 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 19:48:48,277 p=537 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 19:48:48,359 p=537 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 19:48:48,433 p=537 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 19:48:48,504 p=537 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 19:48:48,573 p=537 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 19:48:48,646 p=537 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 19:48:48,649 p=537 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 19:48:48,852 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:48,855 p=537 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 19:48:49,153 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:49,156 p=537 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 19:48:49,343 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:49,346 p=537 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 19:48:49,697 p=537 u=ubuntu |  changed: [localhost]
+2017-02-12 19:48:49,699 p=537 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 19:48:59,870 p=537 u=ubuntu |  ok: [localhost]
+2017-02-12 19:48:59,873 p=537 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 19:48:59,888 p=537 u=ubuntu |  fatal: [localhost]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'SLM_SRC_ROOT' is undefined\n\nThe error appears to have been in '/home/ubuntu/myslmhello/roles/slmwebapp/tasks/main.yml': line 2, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n---\n- name: Deploy webapp source code\n  ^ here\n"}
+2017-02-12 19:48:59,889 p=537 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 19:48:59,889 p=537 u=ubuntu |  localhost                  : ok=15   changed=2    unreachable=0    failed=1   
+2017-02-12 19:49:52,038 p=881 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 19:49:52,053 p=881 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 19:49:52,467 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:49:52,470 p=881 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 19:50:00,111 p=881 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:00,113 p=881 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:00,292 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:00,294 p=881 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:00,391 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:00,393 p=881 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:00,507 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:00,510 p=881 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:00,603 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:00,605 p=881 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 19:50:01,256 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:01,258 p=881 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 19:50:01,840 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:01,842 p=881 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 19:50:02,458 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:02,460 p=881 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 19:50:02,650 p=881 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 19:50:02,722 p=881 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 19:50:02,799 p=881 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 19:50:02,892 p=881 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 19:50:02,968 p=881 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 19:50:03,045 p=881 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 19:50:03,047 p=881 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 19:50:03,252 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:03,254 p=881 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 19:50:03,492 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:03,495 p=881 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 19:50:03,694 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:03,696 p=881 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 19:50:04,069 p=881 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:04,070 p=881 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 19:50:14,263 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:14,266 p=881 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 19:50:14,512 p=881 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:14,514 p=881 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 19:50:14,680 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:14,682 p=881 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 19:50:14,848 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:14,851 p=881 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 19:50:15,013 p=881 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:15,015 p=881 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 19:50:15,206 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:15,209 p=881 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 19:50:15,487 p=881 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:15,489 p=881 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 19:50:15,694 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:15,696 p=881 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 19:50:15,889 p=881 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:15,891 p=881 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 19:50:16,075 p=881 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'})
+2017-02-12 19:50:16,237 p=881 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'})
+2017-02-12 19:50:16,238 p=881 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 19:50:16,486 p=881 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:16,488 p=881 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 19:50:16,488 p=881 u=ubuntu |  localhost                  : ok=25   changed=6    unreachable=0    failed=0   
+2017-02-12 19:50:41,095 p=1457 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 19:50:41,113 p=1457 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 19:50:41,579 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:41,581 p=1457 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 19:50:52,381 p=1457 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:52,384 p=1457 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:52,562 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:52,564 p=1457 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:52,667 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:52,668 p=1457 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:52,770 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:52,772 p=1457 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:50:52,865 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:52,867 p=1457 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 19:50:53,538 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:53,540 p=1457 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 19:50:54,124 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:54,125 p=1457 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 19:50:54,657 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:54,659 p=1457 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 19:50:54,838 p=1457 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 19:50:54,924 p=1457 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 19:50:55,009 p=1457 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 19:50:55,091 p=1457 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 19:50:55,179 p=1457 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 19:50:55,248 p=1457 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 19:50:55,251 p=1457 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 19:50:55,452 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:55,454 p=1457 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 19:50:55,665 p=1457 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:55,667 p=1457 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 19:50:55,918 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:55,920 p=1457 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 19:50:56,107 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:56,109 p=1457 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 19:50:56,365 p=1457 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:56,368 p=1457 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 19:50:56,578 p=1457 u=ubuntu |  ok: [localhost]
+2017-02-12 19:50:56,580 p=1457 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 19:50:56,856 p=1457 u=ubuntu |  changed: [localhost]
+2017-02-12 19:50:56,857 p=1457 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 19:50:56,858 p=1457 u=ubuntu |  localhost                  : ok=17   changed=4    unreachable=0    failed=0   
+2017-02-12 19:57:30,778 p=2367 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 19:57:30,795 p=2367 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 19:57:31,228 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:31,230 p=2367 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 19:57:38,831 p=2367 u=ubuntu |  changed: [localhost]
+2017-02-12 19:57:38,833 p=2367 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:57:39,063 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:39,064 p=2367 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:57:39,176 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:39,178 p=2367 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:57:39,281 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:39,282 p=2367 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:57:40,385 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:40,387 p=2367 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 19:57:41,034 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:41,037 p=2367 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 19:57:41,703 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:41,705 p=2367 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 19:57:42,228 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:42,229 p=2367 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 19:57:42,392 p=2367 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 19:57:42,483 p=2367 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 19:57:42,556 p=2367 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 19:57:42,632 p=2367 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 19:57:42,706 p=2367 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 19:57:42,793 p=2367 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 19:57:42,796 p=2367 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 19:57:43,045 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:43,048 p=2367 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 19:57:43,305 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:43,307 p=2367 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 19:57:43,522 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:43,524 p=2367 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 19:57:43,884 p=2367 u=ubuntu |  changed: [localhost]
+2017-02-12 19:57:43,885 p=2367 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 19:57:54,100 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:54,102 p=2367 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 19:57:54,308 p=2367 u=ubuntu |  changed: [localhost]
+2017-02-12 19:57:54,310 p=2367 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 19:57:54,474 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:54,476 p=2367 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 19:57:54,647 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:54,649 p=2367 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 19:57:54,829 p=2367 u=ubuntu |  changed: [localhost]
+2017-02-12 19:57:54,831 p=2367 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 19:57:55,030 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:55,033 p=2367 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 19:57:55,416 p=2367 u=ubuntu |  changed: [localhost]
+2017-02-12 19:57:55,418 p=2367 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 19:57:55,615 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:55,617 p=2367 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 19:57:55,817 p=2367 u=ubuntu |  ok: [localhost]
+2017-02-12 19:57:55,819 p=2367 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 19:57:56,026 p=2367 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'})
+2017-02-12 19:57:56,183 p=2367 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'})
+2017-02-12 19:57:56,185 p=2367 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 19:57:56,497 p=2367 u=ubuntu |  changed: [localhost]
+2017-02-12 19:57:56,499 p=2367 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 19:57:56,499 p=2367 u=ubuntu |  localhost                  : ok=25   changed=6    unreachable=0    failed=0   
+2017-02-12 19:58:00,808 p=2938 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 19:58:00,828 p=2938 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 19:58:01,237 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:01,239 p=2938 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 19:58:08,941 p=2938 u=ubuntu |  changed: [localhost]
+2017-02-12 19:58:08,943 p=2938 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:58:09,133 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:09,134 p=2938 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:58:09,234 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:09,236 p=2938 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:58:09,340 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:09,342 p=2938 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 19:58:09,443 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:09,445 p=2938 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 19:58:10,057 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:10,059 p=2938 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 19:58:10,695 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:10,697 p=2938 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 19:58:11,223 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:11,226 p=2938 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 19:58:11,420 p=2938 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 19:58:11,494 p=2938 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 19:58:11,577 p=2938 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 19:58:11,662 p=2938 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 19:58:11,743 p=2938 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 19:58:11,846 p=2938 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 19:58:11,849 p=2938 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 19:58:12,125 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:12,127 p=2938 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 19:58:12,364 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:12,367 p=2938 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 19:58:12,623 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:12,625 p=2938 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 19:58:12,814 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:12,816 p=2938 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 19:58:13,065 p=2938 u=ubuntu |  changed: [localhost]
+2017-02-12 19:58:13,066 p=2938 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 19:58:13,303 p=2938 u=ubuntu |  ok: [localhost]
+2017-02-12 19:58:13,304 p=2938 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 19:58:13,580 p=2938 u=ubuntu |  changed: [localhost]
+2017-02-12 19:58:13,581 p=2938 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 19:58:13,582 p=2938 u=ubuntu |  localhost                  : ok=17   changed=3    unreachable=0    failed=0   
+2017-02-12 20:05:58,587 p=4265 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 20:05:58,603 p=4265 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 20:05:59,020 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:05:59,021 p=4265 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 20:06:10,146 p=4265 u=ubuntu |  changed: [localhost]
+2017-02-12 20:06:10,148 p=4265 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:06:10,317 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:10,319 p=4265 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:06:10,435 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:10,437 p=4265 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:06:11,547 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:11,548 p=4265 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:06:11,650 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:11,653 p=4265 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 20:06:12,340 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:12,342 p=4265 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 20:06:12,925 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:12,927 p=4265 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 20:06:13,477 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:13,480 p=4265 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 20:06:13,683 p=4265 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 20:06:13,779 p=4265 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 20:06:13,886 p=4265 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 20:06:13,964 p=4265 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 20:06:14,053 p=4265 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 20:06:14,139 p=4265 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 20:06:14,142 p=4265 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 20:06:14,344 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:14,347 p=4265 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 20:06:14,577 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:14,578 p=4265 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 20:06:14,768 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:14,770 p=4265 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 20:06:15,118 p=4265 u=ubuntu |  changed: [localhost]
+2017-02-12 20:06:15,121 p=4265 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 20:06:25,308 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:25,310 p=4265 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 20:06:25,557 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:25,558 p=4265 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 20:06:25,790 p=4265 u=ubuntu |  changed: [localhost]
+2017-02-12 20:06:25,791 p=4265 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 20:06:25,966 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:25,967 p=4265 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 20:06:57,164 p=4265 u=ubuntu |  changed: [localhost]
+2017-02-12 20:06:57,166 p=4265 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 20:06:57,374 p=4265 u=ubuntu |  changed: [localhost]
+2017-02-12 20:06:57,376 p=4265 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 20:06:57,791 p=4265 u=ubuntu |  changed: [localhost]
+2017-02-12 20:06:57,793 p=4265 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 20:06:57,996 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:57,999 p=4265 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 20:06:58,192 p=4265 u=ubuntu |  ok: [localhost]
+2017-02-12 20:06:58,194 p=4265 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 20:06:58,403 p=4265 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'})
+2017-02-12 20:06:58,574 p=4265 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'})
+2017-02-12 20:06:58,576 p=4265 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 20:06:58,920 p=4265 u=ubuntu |  changed: [localhost]
+2017-02-12 20:06:58,922 p=4265 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 20:06:58,923 p=4265 u=ubuntu |  localhost                  : ok=25   changed=7    unreachable=0    failed=0   
+2017-02-12 20:09:21,409 p=5473 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 20:09:21,424 p=5473 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 20:09:21,854 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:21,855 p=5473 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 20:09:30,559 p=5473 u=ubuntu |  changed: [localhost]
+2017-02-12 20:09:30,562 p=5473 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:09:30,745 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:30,748 p=5473 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:09:30,851 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:30,854 p=5473 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:09:30,974 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:30,977 p=5473 u=ubuntu |  TASK [common : sysctl] *********************************************************
+2017-02-12 20:09:31,096 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:31,098 p=5473 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 20:09:31,833 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:31,835 p=5473 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 20:09:32,437 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:32,439 p=5473 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 20:09:33,049 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:33,050 p=5473 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 20:09:33,225 p=5473 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 20:09:33,298 p=5473 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 20:09:33,389 p=5473 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 20:09:33,468 p=5473 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 20:09:33,543 p=5473 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 20:09:33,620 p=5473 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 20:09:33,623 p=5473 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 20:09:33,865 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:33,867 p=5473 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 20:09:34,139 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:34,142 p=5473 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 20:09:34,351 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:34,352 p=5473 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 20:09:34,782 p=5473 u=ubuntu |  changed: [localhost]
+2017-02-12 20:09:34,784 p=5473 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 20:09:44,955 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:44,957 p=5473 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 20:09:45,167 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:45,169 p=5473 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 20:09:45,363 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:45,364 p=5473 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 20:09:45,647 p=5473 u=ubuntu |  changed: [localhost]
+2017-02-12 20:09:45,650 p=5473 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 20:09:58,659 p=5473 u=ubuntu |  changed: [localhost]
+2017-02-12 20:09:58,662 p=5473 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 20:09:58,880 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:58,882 p=5473 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 20:09:59,325 p=5473 u=ubuntu |  changed: [localhost]
+2017-02-12 20:09:59,327 p=5473 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 20:09:59,526 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:59,528 p=5473 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 20:09:59,710 p=5473 u=ubuntu |  ok: [localhost]
+2017-02-12 20:09:59,712 p=5473 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 20:09:59,901 p=5473 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'})
+2017-02-12 20:10:00,077 p=5473 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'})
+2017-02-12 20:10:00,079 p=5473 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 20:10:00,502 p=5473 u=ubuntu |  changed: [localhost]
+2017-02-12 20:10:00,504 p=5473 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 20:10:00,504 p=5473 u=ubuntu |  localhost                  : ok=25   changed=6    unreachable=0    failed=0   
+2017-02-12 20:16:38,814 p=6632 u=ubuntu |  ERROR! 'slm_kernel_params' is not a valid attribute for a Task
+
+The error appears to have been in '/home/ubuntu/myslmhello/roles/common/tasks/main.yml': line 5, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Update kernel params
+  ^ here
+
+2017-02-12 20:17:22,638 p=6699 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 20:17:22,656 p=6699 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 20:17:23,170 p=6699 u=ubuntu |  ok: [localhost]
+2017-02-12 20:17:23,172 p=6699 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 20:17:34,486 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:17:34,488 p=6699 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 20:17:34,701 p=6699 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576})
+2017-02-12 20:17:34,797 p=6699 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80})
+2017-02-12 20:17:34,883 p=6699 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1})
+2017-02-12 20:17:34,982 p=6699 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10})
+2017-02-12 20:17:34,984 p=6699 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 20:17:35,562 p=6699 u=ubuntu |  ok: [localhost]
+2017-02-12 20:17:35,563 p=6699 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 20:17:36,213 p=6699 u=ubuntu |  ok: [localhost]
+2017-02-12 20:17:36,215 p=6699 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 20:17:36,729 p=6699 u=ubuntu |  ok: [localhost]
+2017-02-12 20:17:36,730 p=6699 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 20:17:36,904 p=6699 u=ubuntu |  changed: [localhost] => (item=/opt/slm)
+2017-02-12 20:17:36,978 p=6699 u=ubuntu |  changed: [localhost] => (item=/opt/slm/data)
+2017-02-12 20:17:37,080 p=6699 u=ubuntu |  changed: [localhost] => (item=/opt/slm/conf)
+2017-02-12 20:17:37,177 p=6699 u=ubuntu |  changed: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 20:17:37,262 p=6699 u=ubuntu |  changed: [localhost] => (item=/opt/slm/data/static-content)
+2017-02-12 20:17:37,361 p=6699 u=ubuntu |  changed: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 20:17:37,448 p=6699 u=ubuntu |  changed: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 20:17:37,452 p=6699 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 20:17:37,703 p=6699 u=ubuntu |  ok: [localhost]
+2017-02-12 20:17:37,706 p=6699 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 20:17:38,014 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:17:38,016 p=6699 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 20:17:38,193 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:17:38,197 p=6699 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 20:17:38,636 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:17:38,638 p=6699 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 20:17:48,841 p=6699 u=ubuntu |  ok: [localhost]
+2017-02-12 20:17:48,843 p=6699 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 20:17:49,107 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:17:49,109 p=6699 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 20:17:49,308 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:17:49,310 p=6699 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 20:17:49,506 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:17:49,508 p=6699 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 20:18:03,037 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:18:03,039 p=6699 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 20:18:03,215 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:18:03,217 p=6699 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 20:18:03,565 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:18:03,567 p=6699 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 20:18:03,758 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:18:03,761 p=6699 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 20:18:03,961 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:18:03,963 p=6699 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 20:18:04,163 p=6699 u=ubuntu |  changed: [localhost] => (item={u'name': u'server.key'})
+2017-02-12 20:18:04,355 p=6699 u=ubuntu |  changed: [localhost] => (item={u'name': u'server.crt'})
+2017-02-12 20:18:04,356 p=6699 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 20:18:04,790 p=6699 u=ubuntu |  changed: [localhost]
+2017-02-12 20:18:04,791 p=6699 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 20:18:04,791 p=6699 u=ubuntu |  localhost                  : ok=22   changed=15   unreachable=0    failed=0   
+2017-02-12 20:24:33,475 p=7765 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 20:24:33,499 p=7765 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 20:24:33,961 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:33,963 p=7765 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 20:24:34,207 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:24:34,209 p=7765 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 20:24:34,415 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:24:34,416 p=7765 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 20:24:34,541 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:24:34,543 p=7765 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 20:24:45,816 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:24:45,819 p=7765 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 20:24:46,037 p=7765 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576})
+2017-02-12 20:24:46,119 p=7765 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80})
+2017-02-12 20:24:46,196 p=7765 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1})
+2017-02-12 20:24:46,289 p=7765 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10})
+2017-02-12 20:24:46,291 p=7765 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 20:24:46,886 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:46,889 p=7765 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 20:24:47,527 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:47,529 p=7765 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 20:24:48,052 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:48,054 p=7765 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 20:24:48,275 p=7765 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 20:24:48,363 p=7765 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 20:24:48,446 p=7765 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 20:24:48,520 p=7765 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 20:24:48,594 p=7765 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/static-content)
+2017-02-12 20:24:48,679 p=7765 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 20:24:48,769 p=7765 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 20:24:48,774 p=7765 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 20:24:49,013 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:49,015 p=7765 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 20:24:49,258 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:49,260 p=7765 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 20:24:49,441 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:49,443 p=7765 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 20:24:49,797 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:24:49,799 p=7765 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 20:24:59,991 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:24:59,993 p=7765 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 20:25:00,241 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:25:00,243 p=7765 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 20:25:00,426 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:25:00,428 p=7765 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 20:25:00,614 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:25:00,615 p=7765 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 20:25:00,803 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:25:00,805 p=7765 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 20:25:00,977 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:25:00,979 p=7765 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 20:25:01,235 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:25:01,236 p=7765 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 20:25:01,407 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:25:01,409 p=7765 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 20:25:01,597 p=7765 u=ubuntu |  ok: [localhost]
+2017-02-12 20:25:01,598 p=7765 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 20:25:01,793 p=7765 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'})
+2017-02-12 20:25:01,966 p=7765 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'})
+2017-02-12 20:25:01,967 p=7765 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 20:25:02,268 p=7765 u=ubuntu |  changed: [localhost]
+2017-02-12 20:25:02,270 p=7765 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 20:25:02,270 p=7765 u=ubuntu |  localhost                  : ok=25   changed=9    unreachable=0    failed=0   
+2017-02-12 20:58:46,313 p=2758 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 20:58:46,328 p=2758 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 20:58:46,784 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:58:46,785 p=2758 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 20:58:47,011 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:58:47,013 p=2758 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 20:58:47,209 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:58:47,211 p=2758 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 20:58:47,332 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:58:47,334 p=2758 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 20:58:57,931 p=2758 u=ubuntu |  changed: [localhost]
+2017-02-12 20:58:57,932 p=2758 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 20:58:58,120 p=2758 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576})
+2017-02-12 20:58:58,198 p=2758 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80})
+2017-02-12 20:58:58,299 p=2758 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1})
+2017-02-12 20:58:58,386 p=2758 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10})
+2017-02-12 20:58:58,389 p=2758 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 20:58:59,041 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:58:59,043 p=2758 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 20:58:59,587 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:58:59,589 p=2758 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 20:59:00,359 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:59:00,362 p=2758 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 20:59:00,548 p=2758 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 20:59:00,640 p=2758 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 20:59:00,720 p=2758 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 20:59:00,822 p=2758 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 20:59:00,893 p=2758 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/static-content)
+2017-02-12 20:59:00,974 p=2758 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 20:59:01,051 p=2758 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 20:59:01,054 p=2758 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 20:59:01,279 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:59:01,285 p=2758 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 20:59:01,557 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:59:01,560 p=2758 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 20:59:01,740 p=2758 u=ubuntu |  ok: [localhost]
+2017-02-12 20:59:01,742 p=2758 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 20:59:02,117 p=2758 u=ubuntu |  fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/postgres-compose.yml", "up", "-d", "--no-recreate"], "delta": "0:00:00.193828", "end": "2017-02-12 20:59:02.106547", "failed": true, "rc": 1, "start": "2017-02-12 20:59:01.912719", "stderr": "Creating postgresdb01\n\nERROR: for db  Cannot create container for service db: Conflict. The name \"/postgresdb01\" is already in use by container 40c29d763899da6b09e140b1422102108030da85da5fce438ed91a955d5e633b. You have to remove (or rename) that container to be able to reuse that name.\nEncountered errors while bringing up the project.", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 20:59:02,118 p=2758 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 20:59:02,119 p=2758 u=ubuntu |  localhost                  : ok=13   changed=1    unreachable=0    failed=1   
+2017-02-12 21:00:42,007 p=3305 u=ubuntu |  Using /etc/ansible/ansible.cfg as config file
+2017-02-12 21:00:42,106 p=3305 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 21:00:42,123 p=3305 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 21:00:42,503 p=3305 u=ubuntu |  ok: [localhost]
+2017-02-12 21:00:42,505 p=3305 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 21:00:42,716 p=3305 u=ubuntu |  ok: [localhost] => {"append": false, "changed": false, "comment": "", "group": 999, "home": "/home/slmuser", "move_home": false, "name": "slmuser", "shell": "/bin/bash", "state": "present", "uid": 1002}
+2017-02-12 21:00:42,718 p=3305 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 21:00:42,873 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 999, "name": "slmgroup", "state": "present", "system": true}
+2017-02-12 21:00:42,875 p=3305 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 21:00:43,009 p=3305 u=ubuntu |  ok: [localhost] => {"append": false, "changed": false, "comment": "", "group": 999, "home": "/home/slmuser", "move_home": false, "name": "slmuser", "shell": "/bin/bash", "state": "present", "uid": 1002}
+2017-02-12 21:00:43,011 p=3305 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 21:00:52,891 p=3305 u=ubuntu |  changed: [localhost] => {"cache_update_time": 1486962049, "cache_updated": true, "changed": true}
+2017-02-12 21:00:52,893 p=3305 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 21:00:53,056 p=3305 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576}) => {"changed": false, "item": {"name": "vm.max_map_count", "value": 1048576}}
+2017-02-12 21:00:53,137 p=3305 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80}) => {"changed": false, "item": {"name": "vm.swappiness", "value": 80}}
+2017-02-12 21:00:53,217 p=3305 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1}) => {"changed": false, "item": {"name": "vm.panic_on_oom", "value": 1}}
+2017-02-12 21:00:53,301 p=3305 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10}) => {"changed": false, "item": {"name": "kernel.panic", "value": 10}}
+2017-02-12 21:00:53,303 p=3305 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 21:00:53,984 p=3305 u=ubuntu |  ok: [localhost] => {"cache_update_time": 1486962049, "cache_updated": false, "changed": false}
+2017-02-12 21:00:53,985 p=3305 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 21:00:54,610 p=3305 u=ubuntu |  ok: [localhost] => {"cache_update_time": 1486962049, "cache_updated": false, "changed": false}
+2017-02-12 21:00:54,612 p=3305 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 21:00:55,158 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "cmd": "/usr/local/bin/pip2 install docker-compose==1.8.1", "name": ["docker-compose==1.8.1"], "requirements": null, "state": "present", "stderr": "", "stdout": "Requirement already satisfied: docker-compose==1.8.1 in /usr/local/lib/python2.7/dist-packages\nRequirement already satisfied: cached-property<2,>=1.2.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: docopt<0.7,>=0.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: PyYAML<4,>=3.10 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: requests<2.8,>=2.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: texttable<0.9,>=0.8.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: websocket-client<1.0,>=0.32.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: docker-py<2.0,>=1.10.3 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: dockerpty<0.5,>=0.4.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: six<2,>=1.3.0 in /usr/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: jsonschema<3,>=2.5.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: enum34<2,>=1.0.4 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: backports.ssl_match_hostname in /usr/local/lib/python2.7/dist-packages (from websocket-client<1.0,>=0.32.0->docker-compose==1.8.1)\nRequirement already satisfied: docker-pycreds>=0.2.1 in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)\nRequirement already satisfied: ipaddress>=1.0.16; python_version < \"3.3\" in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)\nRequirement already satisfied: functools32; python_version == \"2.7\" in /usr/local/lib/python2.7/dist-packages (from jsonschema<3,>=2.5.1->docker-compose==1.8.1)\n", "stdout_lines": ["Requirement already satisfied: docker-compose==1.8.1 in /usr/local/lib/python2.7/dist-packages", "Requirement already satisfied: cached-property<2,>=1.2.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: docopt<0.7,>=0.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: PyYAML<4,>=3.10 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: requests<2.8,>=2.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: texttable<0.9,>=0.8.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: websocket-client<1.0,>=0.32.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: docker-py<2.0,>=1.10.3 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: dockerpty<0.5,>=0.4.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: six<2,>=1.3.0 in /usr/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: jsonschema<3,>=2.5.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: enum34<2,>=1.0.4 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: backports.ssl_match_hostname in /usr/local/lib/python2.7/dist-packages (from websocket-client<1.0,>=0.32.0->docker-compose==1.8.1)", "Requirement already satisfied: docker-pycreds>=0.2.1 in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)", "Requirement already satisfied: ipaddress>=1.0.16; python_version < \"3.3\" in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)", "Requirement already satisfied: functools32; python_version == \"2.7\" in /usr/local/lib/python2.7/dist-packages (from jsonschema<3,>=2.5.1->docker-compose==1.8.1)"], "version": null, "virtualenv": null}
+2017-02-12 21:00:55,160 p=3305 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 21:00:55,374 p=3305 u=ubuntu |  ok: [localhost] => (item=/opt/slm) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm", "mode": "0755", "owner": "root", "path": "/opt/slm", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:00:55,477 p=3305 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/data", "mode": "0755", "owner": "root", "path": "/opt/slm/data", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:00:55,574 p=3305 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/conf", "mode": "0755", "owner": "root", "path": "/opt/slm/conf", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:00:55,663 p=3305 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/conf/nginx", "mode": "0755", "owner": "root", "path": "/opt/slm/conf/nginx", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:00:55,745 p=3305 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/static-content) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/data/static-content", "mode": "0755", "owner": "root", "path": "/opt/slm/data/static-content", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:00:55,827 p=3305 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/data/postgres", "mode": "0755", "owner": "root", "path": "/opt/slm/data/postgres", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:00:55,912 p=3305 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/webapp", "mode": "0755", "owner": "root", "path": "/opt/slm/webapp", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:00:55,915 p=3305 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 21:00:56,172 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "name": "docker", "state": "started"}
+2017-02-12 21:00:56,176 p=3305 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 21:00:56,416 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "checksum": "34fb5e131f5bfe342a57cb7d19003240ae3afea1", "dest": "/opt/slm/data/postgres/pg_hba.conf", "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/data/postgres/pg_hba.conf", "size": 139, "state": "file", "uid": 0}
+2017-02-12 21:00:56,418 p=3305 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 21:00:56,610 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/conf/postgres-compose.yml", "size": 316, "state": "file", "uid": 0}
+2017-02-12 21:00:56,612 p=3305 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 21:01:07,629 p=3305 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/postgres-compose.yml", "up", "-d", "--no-recreate"], "delta": "0:00:10.849262", "end": "2017-02-12 21:01:07.614452", "rc": 0, "start": "2017-02-12 21:00:56.765190", "stderr": "Pulling db (postgres:latest)...\nCreating postgresdb01", "stdout": "latest: Pulling from library/postgres\nDigest: sha256:ff99a5301e7c81cba881e3fbdbf4df5a068683765249ba5ea5694a83747509d4\nStatus: Downloaded newer image for postgres:latest", "stdout_lines": ["latest: Pulling from library/postgres", "Digest: sha256:ff99a5301e7c81cba881e3fbdbf4df5a068683765249ba5ea5694a83747509d4", "Status: Downloaded newer image for postgres:latest"], "warnings": []}
+2017-02-12 21:01:07,632 p=3305 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 21:01:17,832 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "elapsed": 10, "path": null, "port": 5432, "search_regex": null, "state": "started"}
+2017-02-12 21:01:17,834 p=3305 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 21:01:18,067 p=3305 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": "/usr/bin/rsync --delay-updates -F --compress --timeout=120 --archive --copy-links --rsh 'ssh  -S none -o StrictHostKeyChecking=no' --out-format='<<CHANGED>>%i %n%L' \"/home/ubuntu/myslmhello/src\" \"/opt/slm/webapp\"", "msg": ".d..t...... src/helloslmapp/\n>f.st...... src/helloslmapp/views.py\n", "rc": 0, "stdout_lines": [".d..t...... src/helloslmapp/", ">f.st...... src/helloslmapp/views.py"]}
+2017-02-12 21:01:18,068 p=3305 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 21:01:18,275 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/webapp/Dockerfile", "size": 313, "state": "file", "uid": 0}
+2017-02-12 21:01:18,277 p=3305 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 21:01:18,462 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "checksum": "9af757b9bb03cd9c0943bee26416dfb5eb15c8d4", "dest": "/opt/slm/webapp/requirements.pip", "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/webapp/requirements.pip", "size": 100, "state": "file", "uid": 0}
+2017-02-12 21:01:18,464 p=3305 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 21:01:50,650 p=3305 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/bin/docker", "build", "/opt/slm/webapp", "--tag", "slmweb"], "delta": "0:00:32.074149", "end": "2017-02-12 21:01:50.633808", "rc": 0, "start": "2017-02-12 21:01:18.559659", "stderr": "", "stdout": "Sending build context to Docker daemon  38.4 kB\r\r\nStep 1 : FROM python:2.7\n2.7: Pulling from library/python\n5040bd298390: Already exists\nfce5728aad85: Pulling fs layer\n76610ec20bf5: Pulling fs layer\n9c1bc3c30371: Pulling fs layer\ne4b99677d005: Pulling fs layer\ne683c1e75619: Pulling fs layer\need00108881a: Pulling fs layer\ne4b99677d005: Waiting\ne683c1e75619: Waiting\nfce5728aad85: Verifying Checksum\nfce5728aad85: Download complete\ne4b99677d005: Verifying Checksum\ne4b99677d005: Download complete\nfce5728aad85: Pull complete\n76610ec20bf5: Verifying Checksum\n76610ec20bf5: Download complete\need00108881a: Download complete\ne683c1e75619: Verifying Checksum\ne683c1e75619: Download complete\n76610ec20bf5: Pull complete\n9c1bc3c30371: Verifying Checksum\n9c1bc3c30371: Download complete\n9c1bc3c30371: Pull complete\ne4b99677d005: Pull complete\ne683c1e75619: Pull complete\need00108881a: Pull complete\nDigest: sha256:d23845e4757f13266b42877c25b845e455127b85ec12e5d551bec5d8162e7cd4\nStatus: Downloaded newer image for python:2.7\n ---> b4b107fcc777\nStep 2 : ENV PYTHONUNBUFFERED 1\n ---> Running in 662a49329742\n ---> 1a54b7df579b\nRemoving intermediate container 662a49329742\nStep 3 : EXPOSE 7777\n ---> Running in e0952ecfc203\n ---> c2885b61b2e5\nRemoving intermediate container e0952ecfc203\nStep 4 : RUN mkdir /config\n ---> Running in ebb3c608a782\n ---> 58448fdbe5cb\nRemoving intermediate container ebb3c608a782\nStep 5 : RUN mkdir /static_contents\n ---> Running in 1b98caea9f00\n ---> 4b352766bd63\nRemoving intermediate container 1b98caea9f00\nStep 6 : RUN mkdir /src\n ---> Running in ad33721787a4\n ---> 9f4663cd5a6b\nRemoving intermediate container ad33721787a4\nStep 7 : ADD requirements.pip /config/\n ---> cbbb1bc058ec\nRemoving intermediate container 1449c0be3f22\nStep 8 : WORKDIR /usr/src/python\n ---> Running in 618c63211afc\n ---> 7a2406679615\nRemoving intermediate container 618c63211afc\nStep 9 : RUN pip install -r /config/requirements.pip\n ---> Running in 64f6e0e50ba3\nCollecting Django==1.10 (from -r /config/requirements.pip (line 1))\n  Downloading Django-1.10-py2.py3-none-any.whl (6.8MB)\nCollecting gunicorn==19.6.0 (from -r /config/requirements.pip (line 2))\n  Downloading gunicorn-19.6.0-py2.py3-none-any.whl (114kB)\nCollecting psycopg2==2.6.2 (from -r /config/requirements.pip (line 3))\n  Downloading psycopg2-2.6.2.tar.gz (376kB)\nCollecting django-filter==1.0.1 (from -r /config/requirements.pip (line 4))\n  Downloading django_filter-1.0.1-py2.py3-none-any.whl (54kB)\nCollecting djangorestframework==3.5.3 (from -r /config/requirements.pip (line 5))\n  Downloading djangorestframework-3.5.3-py2.py3-none-any.whl (709kB)\nBuilding wheels for collected packages: psycopg2\n  Running setup.py bdist_wheel for psycopg2: started\n  Running setup.py bdist_wheel for psycopg2: finished with status 'done'\n  Stored in directory: /root/.cache/pip/wheels/49/47/2a/5c3f874990ce267228c2dfe7a0589f3b0651aa590e329ad382\nSuccessfully built psycopg2\nInstalling collected packages: Django, gunicorn, psycopg2, django-filter, djangorestframework\nSuccessfully installed Django-1.10 django-filter-1.0.1 djangorestframework-3.5.3 gunicorn-19.6.0 psycopg2-2.6.2\n ---> bf294cfad6f9\nRemoving intermediate container 64f6e0e50ba3\nStep 10 : WORKDIR /src\n ---> Running in 301eae6f23db\n ---> b7655ff2bd8c\nRemoving intermediate container 301eae6f23db\nStep 11 : ENV DATABASE_TYPE postgres\n ---> Running in dc17a538a91e\n ---> e0138f9be96c\nRemoving intermediate container dc17a538a91e\nStep 12 : ENTRYPOINT /bin/bash /src/docker-entrypoint.sh\n ---> Running in 662aa68c2c5e\n ---> e8664577951a\nRemoving intermediate container 662aa68c2c5e\nSuccessfully built e8664577951a", "stdout_lines": ["Sending build context to Docker daemon  38.4 kB", "", "Step 1 : FROM python:2.7", "2.7: Pulling from library/python", "5040bd298390: Already exists", "fce5728aad85: Pulling fs layer", "76610ec20bf5: Pulling fs layer", "9c1bc3c30371: Pulling fs layer", "e4b99677d005: Pulling fs layer", "e683c1e75619: Pulling fs layer", "eed00108881a: Pulling fs layer", "e4b99677d005: Waiting", "e683c1e75619: Waiting", "fce5728aad85: Verifying Checksum", "fce5728aad85: Download complete", "e4b99677d005: Verifying Checksum", "e4b99677d005: Download complete", "fce5728aad85: Pull complete", "76610ec20bf5: Verifying Checksum", "76610ec20bf5: Download complete", "eed00108881a: Download complete", "e683c1e75619: Verifying Checksum", "e683c1e75619: Download complete", "76610ec20bf5: Pull complete", "9c1bc3c30371: Verifying Checksum", "9c1bc3c30371: Download complete", "9c1bc3c30371: Pull complete", "e4b99677d005: Pull complete", "e683c1e75619: Pull complete", "eed00108881a: Pull complete", "Digest: sha256:d23845e4757f13266b42877c25b845e455127b85ec12e5d551bec5d8162e7cd4", "Status: Downloaded newer image for python:2.7", " ---> b4b107fcc777", "Step 2 : ENV PYTHONUNBUFFERED 1", " ---> Running in 662a49329742", " ---> 1a54b7df579b", "Removing intermediate container 662a49329742", "Step 3 : EXPOSE 7777", " ---> Running in e0952ecfc203", " ---> c2885b61b2e5", "Removing intermediate container e0952ecfc203", "Step 4 : RUN mkdir /config", " ---> Running in ebb3c608a782", " ---> 58448fdbe5cb", "Removing intermediate container ebb3c608a782", "Step 5 : RUN mkdir /static_contents", " ---> Running in 1b98caea9f00", " ---> 4b352766bd63", "Removing intermediate container 1b98caea9f00", "Step 6 : RUN mkdir /src", " ---> Running in ad33721787a4", " ---> 9f4663cd5a6b", "Removing intermediate container ad33721787a4", "Step 7 : ADD requirements.pip /config/", " ---> cbbb1bc058ec", "Removing intermediate container 1449c0be3f22", "Step 8 : WORKDIR /usr/src/python", " ---> Running in 618c63211afc", " ---> 7a2406679615", "Removing intermediate container 618c63211afc", "Step 9 : RUN pip install -r /config/requirements.pip", " ---> Running in 64f6e0e50ba3", "Collecting Django==1.10 (from -r /config/requirements.pip (line 1))", "  Downloading Django-1.10-py2.py3-none-any.whl (6.8MB)", "Collecting gunicorn==19.6.0 (from -r /config/requirements.pip (line 2))", "  Downloading gunicorn-19.6.0-py2.py3-none-any.whl (114kB)", "Collecting psycopg2==2.6.2 (from -r /config/requirements.pip (line 3))", "  Downloading psycopg2-2.6.2.tar.gz (376kB)", "Collecting django-filter==1.0.1 (from -r /config/requirements.pip (line 4))", "  Downloading django_filter-1.0.1-py2.py3-none-any.whl (54kB)", "Collecting djangorestframework==3.5.3 (from -r /config/requirements.pip (line 5))", "  Downloading djangorestframework-3.5.3-py2.py3-none-any.whl (709kB)", "Building wheels for collected packages: psycopg2", "  Running setup.py bdist_wheel for psycopg2: started", "  Running setup.py bdist_wheel for psycopg2: finished with status 'done'", "  Stored in directory: /root/.cache/pip/wheels/49/47/2a/5c3f874990ce267228c2dfe7a0589f3b0651aa590e329ad382", "Successfully built psycopg2", "Installing collected packages: Django, gunicorn, psycopg2, django-filter, djangorestframework", "Successfully installed Django-1.10 django-filter-1.0.1 djangorestframework-3.5.3 gunicorn-19.6.0 psycopg2-2.6.2", " ---> bf294cfad6f9", "Removing intermediate container 64f6e0e50ba3", "Step 10 : WORKDIR /src", " ---> Running in 301eae6f23db", " ---> b7655ff2bd8c", "Removing intermediate container 301eae6f23db", "Step 11 : ENV DATABASE_TYPE postgres", " ---> Running in dc17a538a91e", " ---> e0138f9be96c", "Removing intermediate container dc17a538a91e", "Step 12 : ENTRYPOINT /bin/bash /src/docker-entrypoint.sh", " ---> Running in 662aa68c2c5e", " ---> e8664577951a", "Removing intermediate container 662aa68c2c5e", "Successfully built e8664577951a"], "warnings": []}
+2017-02-12 21:01:50,653 p=3305 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 21:01:50,838 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/conf/slmwebapp-compose.yml", "size": 491, "state": "file", "uid": 0}
+2017-02-12 21:01:50,840 p=3305 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 21:01:51,322 p=3305 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/slmwebapp-compose.yml", "up", "-d"], "delta": "0:00:00.373392", "end": "2017-02-12 21:01:51.305594", "rc": 0, "start": "2017-02-12 21:01:50.932202", "stderr": "Found orphan containers (postgresdb01) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.\nCreating slmwebapp", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 21:01:51,323 p=3305 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 21:01:51,554 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/conf/nginx-compose.yml", "size": 333, "state": "file", "uid": 0}
+2017-02-12 21:01:51,556 p=3305 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 21:01:51,783 p=3305 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/conf/nginx/mydjango.conf", "size": 359, "state": "file", "uid": 0}
+2017-02-12 21:01:51,785 p=3305 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 21:01:51,996 p=3305 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'}) => {"changed": false, "checksum": "4aa25ab64eb129691d2298cffd7d1cb3ef0c848f", "dest": "/opt/slm/conf/nginx/server.key", "gid": 0, "group": "root", "item": {"name": "server.key"}, "mode": "0644", "owner": "root", "path": "/opt/slm/conf/nginx/server.key", "size": 1675, "state": "file", "uid": 0}
+2017-02-12 21:01:52,201 p=3305 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'}) => {"changed": false, "checksum": "fdae9643800bf98b99900bdd28951d1b90b6ba72", "dest": "/opt/slm/conf/nginx/server.crt", "gid": 0, "group": "root", "item": {"name": "server.crt"}, "mode": "0644", "owner": "root", "path": "/opt/slm/conf/nginx/server.crt", "size": 1338, "state": "file", "uid": 0}
+2017-02-12 21:01:52,203 p=3305 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 21:01:56,524 p=3305 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/nginx-compose.yml", "up", "-d", "--no-recreate"], "delta": "0:00:04.208035", "end": "2017-02-12 21:01:56.508616", "rc": 0, "start": "2017-02-12 21:01:52.300581", "stderr": "Found orphan containers (slmwebapp, postgresdb01) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.\nPulling nginx (nginx:1.10)...\nCreating nginx01", "stdout": "1.10: Pulling from library/nginx\nDigest: sha256:499622846ef33d0071cd40d3a2abe7517e9f58875fe22644f36d36b110b50e28\nStatus: Downloaded newer image for nginx:1.10", "stdout_lines": ["1.10: Pulling from library/nginx", "Digest: sha256:499622846ef33d0071cd40d3a2abe7517e9f58875fe22644f36d36b110b50e28", "Status: Downloaded newer image for nginx:1.10"], "warnings": []}
+2017-02-12 21:01:56,526 p=3305 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 21:01:56,526 p=3305 u=ubuntu |  localhost                  : ok=25   changed=6    unreachable=0    failed=0   
+2017-02-12 21:03:14,611 p=4769 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 21:03:14,633 p=4769 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 21:03:15,084 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:15,086 p=4769 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 21:03:15,321 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:15,322 p=4769 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 21:03:15,480 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:15,481 p=4769 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 21:03:15,597 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:15,599 p=4769 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 21:03:23,321 p=4769 u=ubuntu |  changed: [localhost]
+2017-02-12 21:03:23,323 p=4769 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 21:03:24,491 p=4769 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576})
+2017-02-12 21:03:24,568 p=4769 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80})
+2017-02-12 21:03:24,643 p=4769 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1})
+2017-02-12 21:03:24,730 p=4769 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10})
+2017-02-12 21:03:24,733 p=4769 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 21:03:25,407 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:25,409 p=4769 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 21:03:26,063 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:26,066 p=4769 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 21:03:26,551 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:26,552 p=4769 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 21:03:26,739 p=4769 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 21:03:26,820 p=4769 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 21:03:26,914 p=4769 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 21:03:26,992 p=4769 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 21:03:27,079 p=4769 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/static-content)
+2017-02-12 21:03:27,177 p=4769 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 21:03:27,262 p=4769 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 21:03:27,266 p=4769 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 21:03:27,470 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:27,472 p=4769 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 21:03:27,679 p=4769 u=ubuntu |  changed: [localhost]
+2017-02-12 21:03:27,681 p=4769 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 21:03:27,936 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:27,938 p=4769 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 21:03:28,123 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:28,125 p=4769 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 21:03:28,388 p=4769 u=ubuntu |  changed: [localhost]
+2017-02-12 21:03:28,390 p=4769 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 21:03:28,594 p=4769 u=ubuntu |  ok: [localhost]
+2017-02-12 21:03:28,596 p=4769 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 21:03:28,875 p=4769 u=ubuntu |  changed: [localhost]
+2017-02-12 21:03:28,877 p=4769 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 21:03:28,877 p=4769 u=ubuntu |  localhost                  : ok=17   changed=4    unreachable=0    failed=0   
+2017-02-12 21:04:22,414 p=5245 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 21:04:22,432 p=5245 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 21:04:22,830 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:22,832 p=5245 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 21:04:23,065 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:23,068 p=5245 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 21:04:23,242 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:23,245 p=5245 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 21:04:23,381 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:23,384 p=5245 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 21:04:34,142 p=5245 u=ubuntu |  changed: [localhost]
+2017-02-12 21:04:34,144 p=5245 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 21:04:34,332 p=5245 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576})
+2017-02-12 21:04:34,418 p=5245 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80})
+2017-02-12 21:04:34,501 p=5245 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1})
+2017-02-12 21:04:34,576 p=5245 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10})
+2017-02-12 21:04:34,580 p=5245 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 21:04:35,275 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:35,277 p=5245 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 21:04:35,900 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:35,902 p=5245 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 21:04:36,486 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:36,489 p=5245 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 21:04:36,650 p=5245 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 21:04:36,727 p=5245 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 21:04:36,818 p=5245 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 21:04:36,900 p=5245 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 21:04:36,980 p=5245 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/static-content)
+2017-02-12 21:04:37,076 p=5245 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 21:04:37,160 p=5245 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 21:04:37,163 p=5245 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 21:04:37,388 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:37,390 p=5245 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 21:04:37,616 p=5245 u=ubuntu |  changed: [localhost]
+2017-02-12 21:04:37,618 p=5245 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 21:04:37,859 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:37,860 p=5245 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 21:04:38,017 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:38,018 p=5245 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 21:04:38,255 p=5245 u=ubuntu |  changed: [localhost]
+2017-02-12 21:04:38,257 p=5245 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 21:04:38,462 p=5245 u=ubuntu |  ok: [localhost]
+2017-02-12 21:04:38,464 p=5245 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 21:04:38,752 p=5245 u=ubuntu |  changed: [localhost]
+2017-02-12 21:04:38,755 p=5245 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 21:04:38,755 p=5245 u=ubuntu |  localhost                  : ok=17   changed=4    unreachable=0    failed=0   
+2017-02-12 21:14:56,242 p=6872 u=ubuntu |  Using /etc/ansible/ansible.cfg as config file
+2017-02-12 21:14:56,325 p=6872 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 21:14:56,346 p=6872 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 21:14:56,823 p=6872 u=ubuntu |  ok: [localhost]
+2017-02-12 21:14:56,825 p=6872 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 21:14:57,068 p=6872 u=ubuntu |  ok: [localhost] => {"append": false, "changed": false, "comment": "", "group": 999, "home": "/home/slmuser", "move_home": false, "name": "slmuser", "shell": "/bin/bash", "state": "present", "uid": 1002}
+2017-02-12 21:14:57,070 p=6872 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 21:14:57,273 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 999, "name": "slmgroup", "state": "present", "system": true}
+2017-02-12 21:14:57,275 p=6872 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 21:14:57,386 p=6872 u=ubuntu |  ok: [localhost] => {"append": false, "changed": false, "comment": "", "group": 999, "home": "/home/slmuser", "move_home": false, "name": "slmuser", "shell": "/bin/bash", "state": "present", "uid": 1002}
+2017-02-12 21:14:57,387 p=6872 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 21:15:08,430 p=6872 u=ubuntu |  changed: [localhost] => {"cache_update_time": 1486962905, "cache_updated": true, "changed": true}
+2017-02-12 21:15:08,432 p=6872 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 21:15:08,631 p=6872 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576}) => {"changed": false, "item": {"name": "vm.max_map_count", "value": 1048576}}
+2017-02-12 21:15:08,715 p=6872 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80}) => {"changed": false, "item": {"name": "vm.swappiness", "value": 80}}
+2017-02-12 21:15:08,808 p=6872 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1}) => {"changed": false, "item": {"name": "vm.panic_on_oom", "value": 1}}
+2017-02-12 21:15:08,899 p=6872 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10}) => {"changed": false, "item": {"name": "kernel.panic", "value": 10}}
+2017-02-12 21:15:08,904 p=6872 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 21:15:09,526 p=6872 u=ubuntu |  ok: [localhost] => {"cache_update_time": 1486962905, "cache_updated": false, "changed": false}
+2017-02-12 21:15:09,528 p=6872 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 21:15:10,189 p=6872 u=ubuntu |  ok: [localhost] => {"cache_update_time": 1486962905, "cache_updated": false, "changed": false}
+2017-02-12 21:15:10,190 p=6872 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 21:15:10,701 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "cmd": "/usr/local/bin/pip2 install docker-compose==1.8.1", "name": ["docker-compose==1.8.1"], "requirements": null, "state": "present", "stderr": "", "stdout": "Requirement already satisfied: docker-compose==1.8.1 in /usr/local/lib/python2.7/dist-packages\nRequirement already satisfied: cached-property<2,>=1.2.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: docopt<0.7,>=0.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: PyYAML<4,>=3.10 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: requests<2.8,>=2.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: texttable<0.9,>=0.8.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: websocket-client<1.0,>=0.32.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: docker-py<2.0,>=1.10.3 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: dockerpty<0.5,>=0.4.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: six<2,>=1.3.0 in /usr/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: jsonschema<3,>=2.5.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: enum34<2,>=1.0.4 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: backports.ssl_match_hostname in /usr/local/lib/python2.7/dist-packages (from websocket-client<1.0,>=0.32.0->docker-compose==1.8.1)\nRequirement already satisfied: docker-pycreds>=0.2.1 in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)\nRequirement already satisfied: ipaddress>=1.0.16; python_version < \"3.3\" in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)\nRequirement already satisfied: functools32; python_version == \"2.7\" in /usr/local/lib/python2.7/dist-packages (from jsonschema<3,>=2.5.1->docker-compose==1.8.1)\n", "stdout_lines": ["Requirement already satisfied: docker-compose==1.8.1 in /usr/local/lib/python2.7/dist-packages", "Requirement already satisfied: cached-property<2,>=1.2.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: docopt<0.7,>=0.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: PyYAML<4,>=3.10 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: requests<2.8,>=2.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: texttable<0.9,>=0.8.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: websocket-client<1.0,>=0.32.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: docker-py<2.0,>=1.10.3 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: dockerpty<0.5,>=0.4.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: six<2,>=1.3.0 in /usr/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: jsonschema<3,>=2.5.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: enum34<2,>=1.0.4 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: backports.ssl_match_hostname in /usr/local/lib/python2.7/dist-packages (from websocket-client<1.0,>=0.32.0->docker-compose==1.8.1)", "Requirement already satisfied: docker-pycreds>=0.2.1 in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)", "Requirement already satisfied: ipaddress>=1.0.16; python_version < \"3.3\" in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)", "Requirement already satisfied: functools32; python_version == \"2.7\" in /usr/local/lib/python2.7/dist-packages (from jsonschema<3,>=2.5.1->docker-compose==1.8.1)"], "version": null, "virtualenv": null}
+2017-02-12 21:15:10,704 p=6872 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 21:15:10,904 p=6872 u=ubuntu |  ok: [localhost] => (item=/opt/slm) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm", "mode": "0755", "owner": "root", "path": "/opt/slm", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:15:10,993 p=6872 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/data", "mode": "0755", "owner": "root", "path": "/opt/slm/data", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:15:11,090 p=6872 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/conf", "mode": "0755", "owner": "root", "path": "/opt/slm/conf", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:15:11,190 p=6872 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/conf/nginx", "mode": "0755", "owner": "root", "path": "/opt/slm/conf/nginx", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:15:11,284 p=6872 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/static-content) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/data/static-content", "mode": "0755", "owner": "root", "path": "/opt/slm/data/static-content", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:15:11,373 p=6872 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/data/postgres", "mode": "0755", "owner": "root", "path": "/opt/slm/data/postgres", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:15:11,479 p=6872 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp) => {"changed": false, "gid": 0, "group": "root", "item": "/opt/slm/webapp", "mode": "0755", "owner": "root", "path": "/opt/slm/webapp", "size": 4096, "state": "directory", "uid": 0}
+2017-02-12 21:15:11,481 p=6872 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 21:15:11,760 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "name": "docker", "state": "started"}
+2017-02-12 21:15:11,762 p=6872 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 21:15:12,029 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "checksum": "34fb5e131f5bfe342a57cb7d19003240ae3afea1", "dest": "/opt/slm/data/postgres/pg_hba.conf", "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/data/postgres/pg_hba.conf", "size": 139, "state": "file", "uid": 0}
+2017-02-12 21:15:12,030 p=6872 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 21:15:12,242 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/conf/postgres-compose.yml", "size": 316, "state": "file", "uid": 0}
+2017-02-12 21:15:12,244 p=6872 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 21:15:12,704 p=6872 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/postgres-compose.yml", "up", "-d", "--no-recreate"], "delta": "0:00:00.293257", "end": "2017-02-12 21:15:12.689472", "rc": 0, "start": "2017-02-12 21:15:12.396215", "stderr": "Creating postgresdb01", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 21:15:12,706 p=6872 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 21:15:22,913 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "elapsed": 10, "path": null, "port": 5432, "search_regex": null, "state": "started"}
+2017-02-12 21:15:22,915 p=6872 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 21:15:23,123 p=6872 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": "/usr/bin/rsync --delay-updates -F --compress --timeout=120 --archive --copy-links --rsh 'ssh  -S none -o StrictHostKeyChecking=no' --out-format='<<CHANGED>>%i %n%L' \"/home/ubuntu/myslmhello/src\" \"/opt/slm/webapp\"", "msg": ".d..t...... src/slmwebsite/\n>f.st...... src/slmwebsite/settings.py\n", "rc": 0, "stdout_lines": [".d..t...... src/slmwebsite/", ">f.st...... src/slmwebsite/settings.py"]}
+2017-02-12 21:15:23,124 p=6872 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 21:15:23,325 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/webapp/Dockerfile", "size": 313, "state": "file", "uid": 0}
+2017-02-12 21:15:23,327 p=6872 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 21:15:23,531 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "checksum": "9af757b9bb03cd9c0943bee26416dfb5eb15c8d4", "dest": "/opt/slm/webapp/requirements.pip", "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/webapp/requirements.pip", "size": 100, "state": "file", "uid": 0}
+2017-02-12 21:15:23,534 p=6872 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 21:15:38,425 p=6872 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/bin/docker", "build", "/opt/slm/webapp", "--tag", "slmweb"], "delta": "0:00:14.779785", "end": "2017-02-12 21:15:38.412238", "rc": 0, "start": "2017-02-12 21:15:23.632453", "stderr": "", "stdout": "Sending build context to Docker daemon 38.91 kB\r\r\nStep 1 : FROM python:2.7\n ---> b4b107fcc777\nStep 2 : ENV PYTHONUNBUFFERED 1\n ---> Running in 8d19c30829e3\n ---> fac188c6dfb0\nRemoving intermediate container 8d19c30829e3\nStep 3 : EXPOSE 7777\n ---> Running in 8ca6c84eff3a\n ---> 0422bc9f28e9\nRemoving intermediate container 8ca6c84eff3a\nStep 4 : RUN mkdir /config\n ---> Running in e15e07762e6b\n ---> e480d740dbef\nRemoving intermediate container e15e07762e6b\nStep 5 : RUN mkdir /static_contents\n ---> Running in 5da521d2ccd9\n ---> 29801cda3f59\nRemoving intermediate container 5da521d2ccd9\nStep 6 : RUN mkdir /src\n ---> Running in fa0564291832\n ---> d1195f21d7b0\nRemoving intermediate container fa0564291832\nStep 7 : ADD requirements.pip /config/\n ---> f5e91a02bbdd\nRemoving intermediate container 473f24884df0\nStep 8 : WORKDIR /usr/src/python\n ---> Running in 460769be39ca\n ---> 845a91b8fb9d\nRemoving intermediate container 460769be39ca\nStep 9 : RUN pip install -r /config/requirements.pip\n ---> Running in 731f306a78f7\nCollecting Django==1.10 (from -r /config/requirements.pip (line 1))\n  Downloading Django-1.10-py2.py3-none-any.whl (6.8MB)\nCollecting gunicorn==19.6.0 (from -r /config/requirements.pip (line 2))\n  Downloading gunicorn-19.6.0-py2.py3-none-any.whl (114kB)\nCollecting psycopg2==2.6.2 (from -r /config/requirements.pip (line 3))\n  Downloading psycopg2-2.6.2.tar.gz (376kB)\nCollecting django-filter==1.0.1 (from -r /config/requirements.pip (line 4))\n  Downloading django_filter-1.0.1-py2.py3-none-any.whl (54kB)\nCollecting djangorestframework==3.5.3 (from -r /config/requirements.pip (line 5))\n  Downloading djangorestframework-3.5.3-py2.py3-none-any.whl (709kB)\nBuilding wheels for collected packages: psycopg2\n  Running setup.py bdist_wheel for psycopg2: started\n  Running setup.py bdist_wheel for psycopg2: finished with status 'done'\n  Stored in directory: /root/.cache/pip/wheels/49/47/2a/5c3f874990ce267228c2dfe7a0589f3b0651aa590e329ad382\nSuccessfully built psycopg2\nInstalling collected packages: Django, gunicorn, psycopg2, django-filter, djangorestframework\nSuccessfully installed Django-1.10 django-filter-1.0.1 djangorestframework-3.5.3 gunicorn-19.6.0 psycopg2-2.6.2\n ---> ddbbc87a48cc\nRemoving intermediate container 731f306a78f7\nStep 10 : WORKDIR /src\n ---> Running in 16b19ae34ac7\n ---> d684338c52da\nRemoving intermediate container 16b19ae34ac7\nStep 11 : ENV DATABASE_TYPE postgres\n ---> Running in 60cc9c90f4cc\n ---> 6e27f59ef3e4\nRemoving intermediate container 60cc9c90f4cc\nStep 12 : ENTRYPOINT /bin/bash /src/docker-entrypoint.sh\n ---> Running in 2d74e11851c2\n ---> e42f761cdd8d\nRemoving intermediate container 2d74e11851c2\nSuccessfully built e42f761cdd8d", "stdout_lines": ["Sending build context to Docker daemon 38.91 kB", "", "Step 1 : FROM python:2.7", " ---> b4b107fcc777", "Step 2 : ENV PYTHONUNBUFFERED 1", " ---> Running in 8d19c30829e3", " ---> fac188c6dfb0", "Removing intermediate container 8d19c30829e3", "Step 3 : EXPOSE 7777", " ---> Running in 8ca6c84eff3a", " ---> 0422bc9f28e9", "Removing intermediate container 8ca6c84eff3a", "Step 4 : RUN mkdir /config", " ---> Running in e15e07762e6b", " ---> e480d740dbef", "Removing intermediate container e15e07762e6b", "Step 5 : RUN mkdir /static_contents", " ---> Running in 5da521d2ccd9", " ---> 29801cda3f59", "Removing intermediate container 5da521d2ccd9", "Step 6 : RUN mkdir /src", " ---> Running in fa0564291832", " ---> d1195f21d7b0", "Removing intermediate container fa0564291832", "Step 7 : ADD requirements.pip /config/", " ---> f5e91a02bbdd", "Removing intermediate container 473f24884df0", "Step 8 : WORKDIR /usr/src/python", " ---> Running in 460769be39ca", " ---> 845a91b8fb9d", "Removing intermediate container 460769be39ca", "Step 9 : RUN pip install -r /config/requirements.pip", " ---> Running in 731f306a78f7", "Collecting Django==1.10 (from -r /config/requirements.pip (line 1))", "  Downloading Django-1.10-py2.py3-none-any.whl (6.8MB)", "Collecting gunicorn==19.6.0 (from -r /config/requirements.pip (line 2))", "  Downloading gunicorn-19.6.0-py2.py3-none-any.whl (114kB)", "Collecting psycopg2==2.6.2 (from -r /config/requirements.pip (line 3))", "  Downloading psycopg2-2.6.2.tar.gz (376kB)", "Collecting django-filter==1.0.1 (from -r /config/requirements.pip (line 4))", "  Downloading django_filter-1.0.1-py2.py3-none-any.whl (54kB)", "Collecting djangorestframework==3.5.3 (from -r /config/requirements.pip (line 5))", "  Downloading djangorestframework-3.5.3-py2.py3-none-any.whl (709kB)", "Building wheels for collected packages: psycopg2", "  Running setup.py bdist_wheel for psycopg2: started", "  Running setup.py bdist_wheel for psycopg2: finished with status 'done'", "  Stored in directory: /root/.cache/pip/wheels/49/47/2a/5c3f874990ce267228c2dfe7a0589f3b0651aa590e329ad382", "Successfully built psycopg2", "Installing collected packages: Django, gunicorn, psycopg2, django-filter, djangorestframework", "Successfully installed Django-1.10 django-filter-1.0.1 djangorestframework-3.5.3 gunicorn-19.6.0 psycopg2-2.6.2", " ---> ddbbc87a48cc", "Removing intermediate container 731f306a78f7", "Step 10 : WORKDIR /src", " ---> Running in 16b19ae34ac7", " ---> d684338c52da", "Removing intermediate container 16b19ae34ac7", "Step 11 : ENV DATABASE_TYPE postgres", " ---> Running in 60cc9c90f4cc", " ---> 6e27f59ef3e4", "Removing intermediate container 60cc9c90f4cc", "Step 12 : ENTRYPOINT /bin/bash /src/docker-entrypoint.sh", " ---> Running in 2d74e11851c2", " ---> e42f761cdd8d", "Removing intermediate container 2d74e11851c2", "Successfully built e42f761cdd8d"], "warnings": []}
+2017-02-12 21:15:38,427 p=6872 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 21:15:38,616 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/conf/slmwebapp-compose.yml", "size": 491, "state": "file", "uid": 0}
+2017-02-12 21:15:38,617 p=6872 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 21:15:39,050 p=6872 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/slmwebapp-compose.yml", "up", "-d"], "delta": "0:00:00.332646", "end": "2017-02-12 21:15:39.034136", "rc": 0, "start": "2017-02-12 21:15:38.701490", "stderr": "Found orphan containers (postgresdb01) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.\nCreating slmwebapp", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 21:15:39,053 p=6872 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 21:15:39,276 p=6872 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/opt/slm/conf/nginx-compose.yml", "size": 333, "state": "file", "uid": 0}
+2017-02-12 21:15:39,277 p=6872 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 21:15:39,602 p=6872 u=ubuntu |  changed: [localhost] => {"changed": true, "checksum": "0c5df8c2d4f5ef941da97380211e5737ecd33cf3", "dest": "/opt/slm/conf/nginx/mydjango.conf", "gid": 0, "group": "root", "md5sum": "18f17d3333c77ec9df7e37f395de3ded", "mode": "0644", "owner": "root", "size": 357, "src": "/home/ubuntu/.ansible/tmp-ubuntu/ansible-tmp-1486962939.3-245713978581720/source", "state": "file", "uid": 0}
+2017-02-12 21:15:39,604 p=6872 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 21:15:39,804 p=6872 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'}) => {"changed": false, "checksum": "4aa25ab64eb129691d2298cffd7d1cb3ef0c848f", "dest": "/opt/slm/conf/nginx/server.key", "gid": 0, "group": "root", "item": {"name": "server.key"}, "mode": "0644", "owner": "root", "path": "/opt/slm/conf/nginx/server.key", "size": 1675, "state": "file", "uid": 0}
+2017-02-12 21:15:39,977 p=6872 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'}) => {"changed": false, "checksum": "fdae9643800bf98b99900bdd28951d1b90b6ba72", "dest": "/opt/slm/conf/nginx/server.crt", "gid": 0, "group": "root", "item": {"name": "server.crt"}, "mode": "0644", "owner": "root", "path": "/opt/slm/conf/nginx/server.crt", "size": 1338, "state": "file", "uid": 0}
+2017-02-12 21:15:39,980 p=6872 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 21:15:40,425 p=6872 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/nginx-compose.yml", "up", "-d", "--no-recreate"], "delta": "0:00:00.337968", "end": "2017-02-12 21:15:40.413178", "rc": 0, "start": "2017-02-12 21:15:40.075210", "stderr": "Found orphan containers (slmwebapp, postgresdb01) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.\nCreating nginx01", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 21:15:40,426 p=6872 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 21:15:40,427 p=6872 u=ubuntu |  localhost                  : ok=25   changed=7    unreachable=0    failed=0   
+2017-02-12 21:16:55,732 p=8083 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 21:16:55,748 p=8083 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 21:16:56,234 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:16:56,236 p=8083 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 21:16:56,514 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:16:56,516 p=8083 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 21:16:56,716 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:16:56,717 p=8083 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 21:16:56,842 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:16:56,844 p=8083 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 21:17:04,961 p=8083 u=ubuntu |  changed: [localhost]
+2017-02-12 21:17:04,963 p=8083 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 21:17:05,133 p=8083 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576})
+2017-02-12 21:17:05,207 p=8083 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80})
+2017-02-12 21:17:06,291 p=8083 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1})
+2017-02-12 21:17:06,372 p=8083 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10})
+2017-02-12 21:17:06,373 p=8083 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 21:17:06,945 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:17:06,948 p=8083 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 21:17:07,623 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:17:07,625 p=8083 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 21:17:08,182 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:17:08,185 p=8083 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 21:17:08,348 p=8083 u=ubuntu |  ok: [localhost] => (item=/opt/slm)
+2017-02-12 21:17:08,430 p=8083 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data)
+2017-02-12 21:17:08,516 p=8083 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf)
+2017-02-12 21:17:08,591 p=8083 u=ubuntu |  ok: [localhost] => (item=/opt/slm/conf/nginx)
+2017-02-12 21:17:08,672 p=8083 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/static-content)
+2017-02-12 21:17:08,760 p=8083 u=ubuntu |  ok: [localhost] => (item=/opt/slm/data/postgres)
+2017-02-12 21:17:08,853 p=8083 u=ubuntu |  ok: [localhost] => (item=/opt/slm/webapp)
+2017-02-12 21:17:08,855 p=8083 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 21:17:09,094 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:17:09,097 p=8083 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 21:17:09,326 p=8083 u=ubuntu |  changed: [localhost]
+2017-02-12 21:17:09,328 p=8083 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 21:17:09,579 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:17:09,581 p=8083 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 21:17:09,773 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:17:09,775 p=8083 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 21:17:23,455 p=8083 u=ubuntu |  changed: [localhost]
+2017-02-12 21:17:23,457 p=8083 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 21:17:23,647 p=8083 u=ubuntu |  ok: [localhost]
+2017-02-12 21:17:23,648 p=8083 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 21:17:34,173 p=8083 u=ubuntu |  changed: [localhost]
+2017-02-12 21:17:34,175 p=8083 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 21:17:34,175 p=8083 u=ubuntu |  localhost                  : ok=17   changed=4    unreachable=0    failed=0   
+2017-02-12 21:21:00,035 p=9425 u=ubuntu |  Using /etc/ansible/ansible.cfg as config file
+2017-02-12 21:21:00,130 p=9425 u=ubuntu |  PLAY [localhost] ***************************************************************
+2017-02-12 21:21:00,146 p=9425 u=ubuntu |  TASK [setup] *******************************************************************
+2017-02-12 21:21:00,598 p=9425 u=ubuntu |  ok: [localhost]
+2017-02-12 21:21:00,599 p=9425 u=ubuntu |  TASK [common : Create the slm user] ********************************************
+2017-02-12 21:21:00,813 p=9425 u=ubuntu |  ok: [localhost] => {"append": false, "changed": false, "comment": "", "group": 999, "home": "/home/slmuser", "move_home": false, "name": "slmuser", "shell": "/bin/bash", "state": "present", "uid": 1002}
+2017-02-12 21:21:00,815 p=9425 u=ubuntu |  TASK [common : Create the slm group] *******************************************
+2017-02-12 21:21:00,969 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 999, "name": "slmgroup", "state": "present", "system": true}
+2017-02-12 21:21:00,971 p=9425 u=ubuntu |  TASK [common : Add the user to the group] **************************************
+2017-02-12 21:21:01,086 p=9425 u=ubuntu |  ok: [localhost] => {"append": false, "changed": false, "comment": "", "group": 999, "home": "/home/slmuser", "move_home": false, "name": "slmuser", "shell": "/bin/bash", "state": "present", "uid": 1002}
+2017-02-12 21:21:01,088 p=9425 u=ubuntu |  TASK [common : Update system apt cache] ****************************************
+2017-02-12 21:21:08,818 p=9425 u=ubuntu |  changed: [localhost] => {"cache_update_time": 1486963268, "cache_updated": true, "changed": true}
+2017-02-12 21:21:08,819 p=9425 u=ubuntu |  TASK [common : Update kernel params] *******************************************
+2017-02-12 21:21:08,983 p=9425 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.max_map_count', u'value': 1048576}) => {"changed": false, "item": {"name": "vm.max_map_count", "value": 1048576}}
+2017-02-12 21:21:09,075 p=9425 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.swappiness', u'value': 80}) => {"changed": false, "item": {"name": "vm.swappiness", "value": 80}}
+2017-02-12 21:21:09,174 p=9425 u=ubuntu |  ok: [localhost] => (item={u'name': u'vm.panic_on_oom', u'value': 1}) => {"changed": false, "item": {"name": "vm.panic_on_oom", "value": 1}}
+2017-02-12 21:21:09,281 p=9425 u=ubuntu |  ok: [localhost] => (item={u'name': u'kernel.panic', u'value': 10}) => {"changed": false, "item": {"name": "kernel.panic", "value": 10}}
+2017-02-12 21:21:09,284 p=9425 u=ubuntu |  TASK [common : Install supervisor] *********************************************
+2017-02-12 21:21:09,965 p=9425 u=ubuntu |  ok: [localhost] => {"cache_update_time": 1486963268, "cache_updated": false, "changed": false}
+2017-02-12 21:21:09,967 p=9425 u=ubuntu |  TASK [common : Ensure Docker is installed] *************************************
+2017-02-12 21:21:10,532 p=9425 u=ubuntu |  ok: [localhost] => {"cache_update_time": 1486963268, "cache_updated": false, "changed": false}
+2017-02-12 21:21:10,534 p=9425 u=ubuntu |  TASK [common : Ensure docker-compose package is installed] *********************
+2017-02-12 21:21:11,059 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "cmd": "/usr/local/bin/pip2 install docker-compose==1.8.1", "name": ["docker-compose==1.8.1"], "requirements": null, "state": "present", "stderr": "", "stdout": "Requirement already satisfied: docker-compose==1.8.1 in /usr/local/lib/python2.7/dist-packages\nRequirement already satisfied: cached-property<2,>=1.2.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: docopt<0.7,>=0.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: PyYAML<4,>=3.10 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: requests<2.8,>=2.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: texttable<0.9,>=0.8.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: websocket-client<1.0,>=0.32.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: docker-py<2.0,>=1.10.3 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: dockerpty<0.5,>=0.4.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: six<2,>=1.3.0 in /usr/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: jsonschema<3,>=2.5.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: enum34<2,>=1.0.4 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)\nRequirement already satisfied: backports.ssl_match_hostname in /usr/local/lib/python2.7/dist-packages (from websocket-client<1.0,>=0.32.0->docker-compose==1.8.1)\nRequirement already satisfied: docker-pycreds>=0.2.1 in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)\nRequirement already satisfied: ipaddress>=1.0.16; python_version < \"3.3\" in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)\nRequirement already satisfied: functools32; python_version == \"2.7\" in /usr/local/lib/python2.7/dist-packages (from jsonschema<3,>=2.5.1->docker-compose==1.8.1)\n", "stdout_lines": ["Requirement already satisfied: docker-compose==1.8.1 in /usr/local/lib/python2.7/dist-packages", "Requirement already satisfied: cached-property<2,>=1.2.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: docopt<0.7,>=0.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: PyYAML<4,>=3.10 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: requests<2.8,>=2.6.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: texttable<0.9,>=0.8.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: websocket-client<1.0,>=0.32.0 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: docker-py<2.0,>=1.10.3 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: dockerpty<0.5,>=0.4.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: six<2,>=1.3.0 in /usr/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: jsonschema<3,>=2.5.1 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: enum34<2,>=1.0.4 in /usr/local/lib/python2.7/dist-packages (from docker-compose==1.8.1)", "Requirement already satisfied: backports.ssl_match_hostname in /usr/local/lib/python2.7/dist-packages (from websocket-client<1.0,>=0.32.0->docker-compose==1.8.1)", "Requirement already satisfied: docker-pycreds>=0.2.1 in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)", "Requirement already satisfied: ipaddress>=1.0.16; python_version < \"3.3\" in /usr/local/lib/python2.7/dist-packages (from docker-py<2.0,>=1.10.3->docker-compose==1.8.1)", "Requirement already satisfied: functools32; python_version == \"2.7\" in /usr/local/lib/python2.7/dist-packages (from jsonschema<3,>=2.5.1->docker-compose==1.8.1)"], "version": null, "virtualenv": null}
+2017-02-12 21:21:11,061 p=9425 u=ubuntu |  TASK [common : Ensure common workspace directories are present] ****************
+2017-02-12 21:21:11,270 p=9425 u=ubuntu |  changed: [localhost] => (item=/opt/slm) => {"changed": true, "gid": 1000, "group": "ubuntu", "item": "/opt/slm", "mode": "0777", "owner": "slmuser", "path": "/opt/slm", "size": 4096, "state": "directory", "uid": 1002}
+2017-02-12 21:21:11,357 p=9425 u=ubuntu |  changed: [localhost] => (item=/opt/slm/data) => {"changed": true, "gid": 1000, "group": "ubuntu", "item": "/opt/slm/data", "mode": "0777", "owner": "slmuser", "path": "/opt/slm/data", "size": 4096, "state": "directory", "uid": 1002}
+2017-02-12 21:21:11,453 p=9425 u=ubuntu |  changed: [localhost] => (item=/opt/slm/conf) => {"changed": true, "gid": 1000, "group": "ubuntu", "item": "/opt/slm/conf", "mode": "0777", "owner": "slmuser", "path": "/opt/slm/conf", "size": 4096, "state": "directory", "uid": 1002}
+2017-02-12 21:21:11,547 p=9425 u=ubuntu |  changed: [localhost] => (item=/opt/slm/conf/nginx) => {"changed": true, "gid": 1000, "group": "ubuntu", "item": "/opt/slm/conf/nginx", "mode": "0777", "owner": "slmuser", "path": "/opt/slm/conf/nginx", "size": 4096, "state": "directory", "uid": 1002}
+2017-02-12 21:21:11,639 p=9425 u=ubuntu |  changed: [localhost] => (item=/opt/slm/data/static-content) => {"changed": true, "gid": 1000, "group": "ubuntu", "item": "/opt/slm/data/static-content", "mode": "0777", "owner": "slmuser", "path": "/opt/slm/data/static-content", "size": 4096, "state": "directory", "uid": 1002}
+2017-02-12 21:21:11,736 p=9425 u=ubuntu |  changed: [localhost] => (item=/opt/slm/data/postgres) => {"changed": true, "gid": 1000, "group": "ubuntu", "item": "/opt/slm/data/postgres", "mode": "0777", "owner": "slmuser", "path": "/opt/slm/data/postgres", "size": 4096, "state": "directory", "uid": 1002}
+2017-02-12 21:21:11,824 p=9425 u=ubuntu |  changed: [localhost] => (item=/opt/slm/webapp) => {"changed": true, "gid": 1000, "group": "ubuntu", "item": "/opt/slm/webapp", "mode": "0777", "owner": "slmuser", "path": "/opt/slm/webapp", "size": 4096, "state": "directory", "uid": 1002}
+2017-02-12 21:21:11,825 p=9425 u=ubuntu |  TASK [common : Ensure docker is in a running state] ****************************
+2017-02-12 21:21:12,040 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "name": "docker", "state": "started"}
+2017-02-12 21:21:12,043 p=9425 u=ubuntu |  TASK [postgres : Copy requirements file] ***************************************
+2017-02-12 21:21:12,309 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "checksum": "34fb5e131f5bfe342a57cb7d19003240ae3afea1", "dest": "/opt/slm/data/postgres/pg_hba.conf", "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/data/postgres/pg_hba.conf", "size": 139, "state": "file", "uid": 1000}
+2017-02-12 21:21:12,311 p=9425 u=ubuntu |  TASK [postgres : Generate docker-compose file for postgres] ********************
+2017-02-12 21:21:12,498 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/conf/postgres-compose.yml", "size": 316, "state": "file", "uid": 1000}
+2017-02-12 21:21:12,500 p=9425 u=ubuntu |  TASK [postgres : Bring up Postgres container] **********************************
+2017-02-12 21:21:12,987 p=9425 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/postgres-compose.yml", "up", "-d", "--no-recreate"], "delta": "0:00:00.293652", "end": "2017-02-12 21:21:12.973787", "rc": 0, "start": "2017-02-12 21:21:12.680135", "stderr": "Creating postgresdb01", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 21:21:12,990 p=9425 u=ubuntu |  TASK [postgres : Ensure necessary ports are opened up] *************************
+2017-02-12 21:21:23,204 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "elapsed": 10, "path": null, "port": 5432, "search_regex": null, "state": "started"}
+2017-02-12 21:21:23,207 p=9425 u=ubuntu |  TASK [slmwebapp : Deploy webapp source code] ***********************************
+2017-02-12 21:21:23,437 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "cmd": "/usr/bin/rsync --delay-updates -F --compress --timeout=120 --archive --copy-links --rsh 'ssh  -S none -o StrictHostKeyChecking=no' --out-format='<<CHANGED>>%i %n%L' \"/home/ubuntu/myslmhello/src\" \"/opt/slm/webapp\"", "msg": "", "rc": 0, "stdout_lines": []}
+2017-02-12 21:21:23,439 p=9425 u=ubuntu |  TASK [slmwebapp : Generate Dockerfile file for webapp] *************************
+2017-02-12 21:21:23,638 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/webapp/Dockerfile", "size": 313, "state": "file", "uid": 1000}
+2017-02-12 21:21:23,640 p=9425 u=ubuntu |  TASK [slmwebapp : Copy requirements file] **************************************
+2017-02-12 21:21:23,824 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "checksum": "9af757b9bb03cd9c0943bee26416dfb5eb15c8d4", "dest": "/opt/slm/webapp/requirements.pip", "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/webapp/requirements.pip", "size": 100, "state": "file", "uid": 1000}
+2017-02-12 21:21:23,826 p=9425 u=ubuntu |  TASK [slmwebapp : Build webapp container] **************************************
+2017-02-12 21:21:39,132 p=9425 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/bin/docker", "build", "/opt/slm/webapp", "--tag", "slmweb"], "delta": "0:00:15.202743", "end": "2017-02-12 21:21:39.120456", "rc": 0, "start": "2017-02-12 21:21:23.917713", "stderr": "", "stdout": "Sending build context to Docker daemon  38.4 kB\r\r\nStep 1 : FROM python:2.7\n ---> b4b107fcc777\nStep 2 : ENV PYTHONUNBUFFERED 1\n ---> Running in 7937af0a8380\n ---> 03926cca9184\nRemoving intermediate container 7937af0a8380\nStep 3 : EXPOSE 7777\n ---> Running in 75ca09e0ddaa\n ---> 06721ae3e82a\nRemoving intermediate container 75ca09e0ddaa\nStep 4 : RUN mkdir /config\n ---> Running in b74f67444869\n ---> 309d749c0aec\nRemoving intermediate container b74f67444869\nStep 5 : RUN mkdir /static_contents\n ---> Running in 917670c19070\n ---> dd50bdfbe142\nRemoving intermediate container 917670c19070\nStep 6 : RUN mkdir /src\n ---> Running in 3d962bdcf9b7\n ---> 6e530a37301b\nRemoving intermediate container 3d962bdcf9b7\nStep 7 : ADD requirements.pip /config/\n ---> 3551765a9162\nRemoving intermediate container a7c64c9555ba\nStep 8 : WORKDIR /usr/src/python\n ---> Running in 2c627acd14db\n ---> 7ec1281d7fb2\nRemoving intermediate container 2c627acd14db\nStep 9 : RUN pip install -r /config/requirements.pip\n ---> Running in a282976ef7f2\nCollecting Django==1.10 (from -r /config/requirements.pip (line 1))\n  Downloading Django-1.10-py2.py3-none-any.whl (6.8MB)\nCollecting gunicorn==19.6.0 (from -r /config/requirements.pip (line 2))\n  Downloading gunicorn-19.6.0-py2.py3-none-any.whl (114kB)\nCollecting psycopg2==2.6.2 (from -r /config/requirements.pip (line 3))\n  Downloading psycopg2-2.6.2.tar.gz (376kB)\nCollecting django-filter==1.0.1 (from -r /config/requirements.pip (line 4))\n  Downloading django_filter-1.0.1-py2.py3-none-any.whl (54kB)\nCollecting djangorestframework==3.5.3 (from -r /config/requirements.pip (line 5))\n  Downloading djangorestframework-3.5.3-py2.py3-none-any.whl (709kB)\nBuilding wheels for collected packages: psycopg2\n  Running setup.py bdist_wheel for psycopg2: started\n  Running setup.py bdist_wheel for psycopg2: finished with status 'done'\n  Stored in directory: /root/.cache/pip/wheels/49/47/2a/5c3f874990ce267228c2dfe7a0589f3b0651aa590e329ad382\nSuccessfully built psycopg2\nInstalling collected packages: Django, gunicorn, psycopg2, django-filter, djangorestframework\nSuccessfully installed Django-1.10 django-filter-1.0.1 djangorestframework-3.5.3 gunicorn-19.6.0 psycopg2-2.6.2\n ---> 612de2c32000\nRemoving intermediate container a282976ef7f2\nStep 10 : WORKDIR /src\n ---> Running in d3c38fbea213\n ---> 7e6866f96813\nRemoving intermediate container d3c38fbea213\nStep 11 : ENV DATABASE_TYPE postgres\n ---> Running in f6cc6aa8ed11\n ---> bff5c26e9080\nRemoving intermediate container f6cc6aa8ed11\nStep 12 : ENTRYPOINT /bin/bash /src/docker-entrypoint.sh\n ---> Running in cfcfc50c177b\n ---> a25ee2845073\nRemoving intermediate container cfcfc50c177b\nSuccessfully built a25ee2845073", "stdout_lines": ["Sending build context to Docker daemon  38.4 kB", "", "Step 1 : FROM python:2.7", " ---> b4b107fcc777", "Step 2 : ENV PYTHONUNBUFFERED 1", " ---> Running in 7937af0a8380", " ---> 03926cca9184", "Removing intermediate container 7937af0a8380", "Step 3 : EXPOSE 7777", " ---> Running in 75ca09e0ddaa", " ---> 06721ae3e82a", "Removing intermediate container 75ca09e0ddaa", "Step 4 : RUN mkdir /config", " ---> Running in b74f67444869", " ---> 309d749c0aec", "Removing intermediate container b74f67444869", "Step 5 : RUN mkdir /static_contents", " ---> Running in 917670c19070", " ---> dd50bdfbe142", "Removing intermediate container 917670c19070", "Step 6 : RUN mkdir /src", " ---> Running in 3d962bdcf9b7", " ---> 6e530a37301b", "Removing intermediate container 3d962bdcf9b7", "Step 7 : ADD requirements.pip /config/", " ---> 3551765a9162", "Removing intermediate container a7c64c9555ba", "Step 8 : WORKDIR /usr/src/python", " ---> Running in 2c627acd14db", " ---> 7ec1281d7fb2", "Removing intermediate container 2c627acd14db", "Step 9 : RUN pip install -r /config/requirements.pip", " ---> Running in a282976ef7f2", "Collecting Django==1.10 (from -r /config/requirements.pip (line 1))", "  Downloading Django-1.10-py2.py3-none-any.whl (6.8MB)", "Collecting gunicorn==19.6.0 (from -r /config/requirements.pip (line 2))", "  Downloading gunicorn-19.6.0-py2.py3-none-any.whl (114kB)", "Collecting psycopg2==2.6.2 (from -r /config/requirements.pip (line 3))", "  Downloading psycopg2-2.6.2.tar.gz (376kB)", "Collecting django-filter==1.0.1 (from -r /config/requirements.pip (line 4))", "  Downloading django_filter-1.0.1-py2.py3-none-any.whl (54kB)", "Collecting djangorestframework==3.5.3 (from -r /config/requirements.pip (line 5))", "  Downloading djangorestframework-3.5.3-py2.py3-none-any.whl (709kB)", "Building wheels for collected packages: psycopg2", "  Running setup.py bdist_wheel for psycopg2: started", "  Running setup.py bdist_wheel for psycopg2: finished with status 'done'", "  Stored in directory: /root/.cache/pip/wheels/49/47/2a/5c3f874990ce267228c2dfe7a0589f3b0651aa590e329ad382", "Successfully built psycopg2", "Installing collected packages: Django, gunicorn, psycopg2, django-filter, djangorestframework", "Successfully installed Django-1.10 django-filter-1.0.1 djangorestframework-3.5.3 gunicorn-19.6.0 psycopg2-2.6.2", " ---> 612de2c32000", "Removing intermediate container a282976ef7f2", "Step 10 : WORKDIR /src", " ---> Running in d3c38fbea213", " ---> 7e6866f96813", "Removing intermediate container d3c38fbea213", "Step 11 : ENV DATABASE_TYPE postgres", " ---> Running in f6cc6aa8ed11", " ---> bff5c26e9080", "Removing intermediate container f6cc6aa8ed11", "Step 12 : ENTRYPOINT /bin/bash /src/docker-entrypoint.sh", " ---> Running in cfcfc50c177b", " ---> a25ee2845073", "Removing intermediate container cfcfc50c177b", "Successfully built a25ee2845073"], "warnings": []}
+2017-02-12 21:21:39,135 p=9425 u=ubuntu |  TASK [slmwebapp : Generate docker-compose file for webapp] *********************
+2017-02-12 21:21:39,359 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/conf/slmwebapp-compose.yml", "size": 491, "state": "file", "uid": 1000}
+2017-02-12 21:21:39,362 p=9425 u=ubuntu |  TASK [slmwebapp : Bring up slmweb container] ***********************************
+2017-02-12 21:21:39,781 p=9425 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/slmwebapp-compose.yml", "up", "-d"], "delta": "0:00:00.308939", "end": "2017-02-12 21:21:39.765836", "rc": 0, "start": "2017-02-12 21:21:39.456897", "stderr": "Found orphan containers (postgresdb01) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.\nCreating slmwebapp", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 21:21:39,784 p=9425 u=ubuntu |  TASK [nginx : Generate docker-compose file for nginx] **************************
+2017-02-12 21:21:39,981 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/conf/nginx-compose.yml", "size": 333, "state": "file", "uid": 1000}
+2017-02-12 21:21:39,984 p=9425 u=ubuntu |  TASK [nginx : Generate nginx config file] **************************************
+2017-02-12 21:21:40,166 p=9425 u=ubuntu |  ok: [localhost] => {"changed": false, "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/conf/nginx/mydjango.conf", "size": 357, "state": "file", "uid": 1000}
+2017-02-12 21:21:40,167 p=9425 u=ubuntu |  TASK [nginx : Copy certificate files] ******************************************
+2017-02-12 21:21:40,349 p=9425 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.key'}) => {"changed": false, "checksum": "4aa25ab64eb129691d2298cffd7d1cb3ef0c848f", "dest": "/opt/slm/conf/nginx/server.key", "gid": 1000, "group": "ubuntu", "item": {"name": "server.key"}, "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/conf/nginx/server.key", "size": 1675, "state": "file", "uid": 1000}
+2017-02-12 21:21:40,515 p=9425 u=ubuntu |  ok: [localhost] => (item={u'name': u'server.crt'}) => {"changed": false, "checksum": "fdae9643800bf98b99900bdd28951d1b90b6ba72", "dest": "/opt/slm/conf/nginx/server.crt", "gid": 1000, "group": "ubuntu", "item": {"name": "server.crt"}, "mode": "0777", "owner": "ubuntu", "path": "/opt/slm/conf/nginx/server.crt", "size": 1338, "state": "file", "uid": 1000}
+2017-02-12 21:21:40,517 p=9425 u=ubuntu |  TASK [nginx : Bring up nginx container] ****************************************
+2017-02-12 21:21:41,006 p=9425 u=ubuntu |  changed: [localhost] => {"changed": true, "cmd": ["/usr/local/bin/docker-compose", "-f", "/opt/slm/conf/nginx-compose.yml", "up", "-d", "--no-recreate"], "delta": "0:00:00.386781", "end": "2017-02-12 21:21:40.992749", "rc": 0, "start": "2017-02-12 21:21:40.605968", "stderr": "Found orphan containers (slmwebapp, postgresdb01) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.\nCreating nginx01", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-02-12 21:21:41,007 p=9425 u=ubuntu |  PLAY RECAP *********************************************************************
+2017-02-12 21:21:41,008 p=9425 u=ubuntu |  localhost                  : ok=25   changed=6    unreachable=0    failed=0   

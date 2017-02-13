@@ -1,0 +1,48 @@
+---
+
+- name: Create the slm user
+  user: name="slmuser" state=present shell=/bin/bash
+  register: slmuser_created
+
+- name: Create the slm group
+  group: name="slmgroup" system=yes state=present
+
+- name: Add the user to the group
+  user: name="slmuser" group="slmgroup" state=present
+
+- name: Update system apt cache
+  apt: update_cache=yes
+
+- name: Update kernel params
+  sysctl: name={{ item.name }} value={{ item.value }} state=present
+  with_items:
+    - { name: vm.max_map_count, value: 1048576 }
+    - { name: vm.swappiness, value: 80 }
+    - { name: vm.panic_on_oom, value: 1 }
+    - { name: kernel.panic, value: 10 }
+# - sysctl: name=kernel.panic value=10 state=present
+
+- name: Install supervisor
+  apt: name=supervisor state=present install_recommends=no
+
+- name: Ensure Docker is installed
+  apt: pkg=docker-engine=1.12.1-0~trusty state=installed update_cache=false
+  tags:
+    - deploy
+
+- name: Ensure docker-compose package is installed
+  pip: name=docker-compose==1.8.1
+
+- name: Ensure common workspace directories are present
+  file: path="{{ item }}" state=directory owner="slmuser"
+  with_items:
+    - "{{ SLM_DEPLOYMENT_ROOT }}"
+    - "{{ SLM_DATA }}"
+    - "{{ SLM_CONF }}"
+    - "{{ NGINX_CONF_FOLDER }}"
+    - "{{ STATIC_CONTENT_FOLDER }}"
+    - "{{ POSTGRES_DATA }}"
+    - "{{ SLMWEBAPP_ROOT }}"
+
+- name: Ensure docker is in a running state
+  service: name=docker state=started

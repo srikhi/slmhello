@@ -1,0 +1,21 @@
+- name: Generate docker-compose file for nginx
+  template:
+    src: nginx-compose.yml.tmpl
+    dest: "{{ SLM_CONF }}/nginx-compose.yml"
+
+- name: Generate nginx config file
+  template:
+    src: mydjango.conf.tmpl
+    dest: "{{ NGINX_CONF_FOLDER }}/mydjango.conf"
+
+- name: Copy certificate files
+  copy: src={{ item.name }} dest="{{ NGINX_CONF_FOLDER }}/"
+  with_items:
+    - { name: 'server.key' }
+    - { name: 'server.crt' }
+
+- name: Bring up nginx container
+  command: >
+           /usr/local/bin/docker-compose -f 
+           "{{ SLM_CONF }}/nginx-compose.yml" up -d
+           --no-recreate

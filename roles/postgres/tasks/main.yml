@@ -1,0 +1,18 @@
+- name: Copy requirements file
+  copy:
+    src="pg_hba.conf"
+    dest="{{ POSTGRES_DATA }}/pg_hba.conf"
+
+- name: Generate docker-compose file for postgres
+  template:
+    src: postgres-compose.yml.templ
+    dest: "{{ SLM_CONF }}/postgres-compose.yml"
+
+- name: Bring up Postgres container
+  command: >
+           /usr/local/bin/docker-compose -f 
+           "{{ SLM_CONF }}/postgres-compose.yml" up -d
+           --no-recreate
+
+- name: Ensure necessary ports are opened up
+  wait_for: port="5432" delay=10 timeout=300

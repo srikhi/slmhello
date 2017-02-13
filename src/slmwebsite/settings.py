@@ -25,8 +25,9 @@ SECRET_KEY = 'bsd(pqk&#r0h!wt1*4&l(9(-0_dxv_wcl5ts32&v0+k9_=yqdg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1:8080',
+                 'localhost:8080',
+                ]
 
 # Application definition
 
@@ -37,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    # 'rest_framework',
     'helloslmapp',
 ]
 

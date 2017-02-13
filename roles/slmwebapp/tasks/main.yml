@@ -1,0 +1,35 @@
+---
+- name: Deploy webapp source code
+  synchronize:
+    src: "{{ SLM_SRC_ROOT }}"
+    dest: "{{ SLMWEBAPP_ROOT }}"
+    delete: no
+    rsync_timeout: 120
+    links: yes
+    copy_links: yes
+    rsync_opts: []
+
+- name: Generate Dockerfile file for webapp
+  template:
+    src: Dockerfile.tmpl
+    dest: "{{ SLMWEBAPP_ROOT }}/Dockerfile"
+
+- name: Copy requirements file
+  copy:
+    src="requirements.pip"
+    dest="{{ SLMWEBAPP_ROOT }}/requirements.pip"
+
+- name: Build webapp container
+  command: >
+           /usr/bin/docker build  "{{ SLMWEBAPP_ROOT }}"
+           --tag slmweb
+
+- name: Generate docker-compose file for webapp
+  template:
+    src: slmwebapp-compose.yml.tmpl
+    dest: "{{ SLM_CONF }}/slmwebapp-compose.yml"
+
+- name: Bring up slmweb container
+  command: >
+           /usr/local/bin/docker-compose -f 
+           "{{ SLM_CONF }}/slmwebapp-compose.yml" up -d

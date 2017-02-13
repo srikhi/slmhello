@@ -6,17 +6,15 @@ services:
     container_name: slmwebapp
     network_mode: host
     restart: always
-    command: python manage.py runserver 0.0.0.0:7777
+    command: python manage.py runserver 0.0.0.0:8080
     hostname: slmweb
     extra_hosts:
-      - "slmdbhost: 192.168.203.121"
+      - "slmdbhost: 127.0.0.1"
     volumes:
       - ./src:/src
     expose:
-      - "7777"
+      - "8080"
     environment:
       POSTGRES_USER: slmuser
       POSTGRES_PASSWORD: slmpass
       POSTGRES_DB: slmdb
-      WAIT_HOSTS: "slmdbhost:5432"
-      WAIT_TIMEOUT: 120

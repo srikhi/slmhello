@@ -11,4 +11,4 @@ services:
       POSTGRES_DB: slmdb
     network_mode: host
     volumes:
-      - "{{ SLM_ROOT }}/postgres-data:/data"
+      - "{{ POSTGRES_DATA }}:/data"

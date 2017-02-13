@@ -3,13 +3,16 @@ ENV PYTHONUNBUFFERED 1
 
 EXPOSE 7777
 RUN mkdir /config
+RUN mkdir /static_contents
+RUN mkdir /src
   
-ADD /config/requirements.pip /config/
+ADD requirements.pip /config/
 
 WORKDIR /usr/src/python
 RUN pip install -r /config/requirements.pip  
-RUN mkdir /src;  
+
 WORKDIR /src
 
 ENV DATABASE_TYPE postgres
-CMD [ "python", "manage.py", "runserver", "0.0.0.0:7777" ]
+
+ENTRYPOINT ["/bin/bash", "/src/docker-entrypoint.sh"]
