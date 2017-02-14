@@ -5,7 +5,7 @@ services:
     container_name: slmwebapp
     network_mode: host
     restart: always
-    hostname: slmweb
+    hostname: slmweb.slmlab.com
     # We map volume so that the app does not lose migration details
     volumes:
       - "{{ STATIC_CONTENT_FOLDER }}:/static_contents"

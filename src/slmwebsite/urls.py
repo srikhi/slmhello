@@ -24,10 +24,9 @@ api_router = DefaultRouter()
 # api_router.register(r'helloworld', HomePageView.as_view())
 
 urlpatterns = [
+    url(r'^mygoogauth/', include("social_django.urls", namespace="social")),
     url(r'^$', helloworld),
     url(r'^helloview$', HomePageView.as_view(), name='HelloViewIsMyName'),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(api_router.urls)),
-    url(r'^api-auth/',
-        include('rest_framework.urls', namespace='rest_framework')),
 ]

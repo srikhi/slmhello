@@ -25,9 +25,10 @@ SECRET_KEY = 'bsd(pqk&#r0h!wt1*4&l(9(-0_dxv_wcl5ts32&v0+k9_=yqdg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8080',
-                 'localhost:8080',
-                 'slmweb',
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'localhost',
+                 'slmdevpodnginx.slmlab.com',
+                 'slmweb.slmlab.com',
                 ]
 
 # Application definition
@@ -40,11 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'permission',
+    'social_django',
     'rest_framework',
     'helloslmapp',
 ]
 
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
     'permission.backends.PermissionBackend',
     )
 
@@ -73,8 +77,16 @@ LOGGING = {
 }
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+
     'DEFAULT_FILTER_BACKENDS': (
         'rest_framework.filters.DjangoFilterBackend',
+    ),
+
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.DjangoObjectPermissions',
     )
 }
 
@@ -83,7 +95,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    #    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -93,7 +105,7 @@ ROOT_URLCONF = 'slmwebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'slmwebsite', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'builtins': [
@@ -113,13 +125,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'slmwebsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
      'default': {
-         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
          'ENGINE': 'django.db.backends.postgresql',
          'NAME': 'slmdb',
          'USER': 'slmuser',
@@ -128,7 +138,6 @@ DATABASES = {
          'PORT': 5432,
      }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

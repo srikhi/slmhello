@@ -1,18 +1,21 @@
-upstream slmweb {  
+upstream slmweb {
   ip_hash;
   server 127.0.0.1:{{SLMWEBAPP_HTTP_PORT}};
 }
 
 # portal
 server {
-   # Enable only for debugging.
-   listen 80;
    listen 443 ssl;
    server_name slmdevpodnginx.slmlab.com;
    ssl on;
    ssl_certificate  /etc/nginx/conf.d/server.crt;
    ssl_certificate_key  /etc/nginx/conf.d/server.key;
+
+   rewrite ^(.*) http://slmdevpodnginx.slmlab.com$1 permanent;
+
    location / {
-        proxy_pass http://slmweb/;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_pass http://127.0.0.1:{{SLMWEBAPP_HTTP_PORT}}/;
    }
 }
