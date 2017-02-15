@@ -1,8 +1,11 @@
 #!/bin/bash
 
+echo "Creating Initial admins"
+python manage.py create-admins
+
 # Collect static files
 echo "Collect static files"
-# python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput
 
 # Apply database migrations
 echo "Make database migrations"

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'permission',
+    # For user registering/sign-up, log in etc.
+    'registration',
     'social_django',
     'rest_framework',
     'helloslmapp',
@@ -71,7 +73,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'level': os.getenv('SLMWEBSITE_LOG_LEVEL', 'DEBUG'),
+            'level': os.getenv('SLMWEBSITE_LOG_LEVEL', 'INFO'),
         },
     },
 }
@@ -171,6 +173,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+ADMINS = [('slmadmin', 'slmadmin@slmlab.com')]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

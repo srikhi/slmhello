@@ -1,0 +1,14 @@
+{% extends "rest_framework/base.html" %}
+
+{% block title %}
+Hello SLM APIs
+{% endblock %}
+
+{% block branding %}
+<a class='navbar-brand' rel="nofollow" href='{% url "api-root" %}'>
+  Hello-SLM
+  <span class="version">
+    1.0.0
+  </span>
+</a>
+{% endblock %}

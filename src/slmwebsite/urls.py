@@ -14,8 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 import permission
+import registration
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from rest_framework.routers import DefaultRouter
 from helloslmapp.views import (helloworld,
                                HomePageView,)
@@ -28,5 +30,7 @@ urlpatterns = [
     url(r'^$', helloworld),
     url(r'^helloview$', HomePageView.as_view(), name='HelloViewIsMyName'),
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('registration.urls')),
+    url(r'^logmein/$', auth_views.login, name='login'),
     url(r'^api/', include(api_router.urls)),
 ]
