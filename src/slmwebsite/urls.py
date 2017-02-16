@@ -33,4 +33,6 @@ urlpatterns = [
     url(r'^accounts/', include('registration.urls')),
     url(r'^logmein/$', auth_views.login, name='login'),
     url(r'^api/', include(api_router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls',
+        namespace='rest_framework'))
 ]
