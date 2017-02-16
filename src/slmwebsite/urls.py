@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from rest_framework.routers import DefaultRouter
 from helloslmapp.views import (helloworld,
+                               AuthHomePageView,
                                HomePageView,)
 permission.autodiscover()
 api_router = DefaultRouter()
@@ -29,6 +30,7 @@ urlpatterns = [
     url(r'^mygoogauth/', include("social_django.urls", namespace="social")),
     url(r'^$', helloworld),
     url(r'^helloview$', HomePageView.as_view(), name='HelloViewIsMyName'),
+    url(r'^authhello$', AuthHomePageView.as_view(), name='AuthenticHello'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.urls')),
     url(r'^logmein/$', auth_views.login, name='login'),
