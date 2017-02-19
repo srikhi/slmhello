@@ -24,7 +24,7 @@ SECRET_KEY = 'bsd(pqk&#r0h!wt1*4&l(9(-0_dxv_wcl5ts32&v0+k9_=yqdg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+SITE_ID = 1
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
                  'slmdevpodnginx.slmlab.com',
@@ -41,10 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'permission',
+    'django.contrib.sites',
     # For user registering/sign-up, log in etc.
     'registration',
     'social_django',
     'rest_framework',
+    'rest_framework.authtoken',
     'helloslmapp',
 ]
 
@@ -132,6 +134,10 @@ WSGI_APPLICATION = 'slmwebsite.wsgi.application'
 
 DATABASES = {
      'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': 'slmdb',
+     },
+     'postgres': {
          'ENGINE': 'django.db.backends.postgresql',
          'NAME': 'slmdb',
          'USER': 'slmuser',
@@ -180,6 +186,10 @@ ADMINS = [('slmadmin', 'slmadmin@slmlab.com')]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static_contents/'
+
+REGISTRATION_OPEN = True
+LOGIN_REDIRECT_URL = '/helloview/'
+LOGIN_URL = '/accounts/login/'
 
 try:
     from local_settings import *

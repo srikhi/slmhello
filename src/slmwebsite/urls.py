@@ -28,11 +28,11 @@ api_router = DefaultRouter()
 
 urlpatterns = [
     url(r'^mygoogauth/', include("social_django.urls", namespace="social")),
-    url(r'^$', helloworld),
+    url(r'^base', helloworld),
     url(r'^helloview$', HomePageView.as_view(), name='HelloViewIsMyName'),
     url(r'^authhello$', AuthHomePageView.as_view(), name='AuthenticHello'),
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('registration.urls')),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logmein/$', auth_views.login, name='login'),
     url(r'^api/', include(api_router.urls)),
     url(r'^api-auth/', include('rest_framework.urls',
