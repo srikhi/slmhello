@@ -13,6 +13,8 @@ ansible-playbook --extra-vars "{ $ANSIBLE_BASE_VARS }" \
     --sudo  --connection=local \
     $SLM_ROOT/launchwebapp.yml
 
+# sudo docker rmi slmweb:latest -f
+
 sudo docker-compose -f /opt/slm/conf/slmwebapp-compose.yml down
 sudo docker-compose -f /opt/slm/conf/slmwebapp-compose.yml up
 

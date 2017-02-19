@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -30,6 +29,17 @@ ALLOWED_HOSTS = ['127.0.0.1',
                  'slmdevpodnginx.slmlab.com',
                  'slmweb.slmlab.com',
                 ]
+
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/api/'
+LOGIN_EXEMPT_URLS = (
+ r'^about\.html$',
+ r'^legal/', # allow any URL under /legal/*
+ r'^accounts/login', # allow any URL under /legal/*
+ r'^accounts/register', # allow any URL under /legal/*
+ r'^accounts/logout', # allow any URL under /legal/*
+# LOGOUT_URL.lstrip('/'),
+) 
 
 # Application definition
 
@@ -102,6 +112,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'helloslmapp.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'slmwebsite.urls'
@@ -188,9 +199,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/static_contents/'
 
 REGISTRATION_OPEN = True
-LOGIN_REDIRECT_URL = '/helloview/'
-LOGIN_URL = '/accounts/login/'
 
+# from login_required_middleware import LoginRequiredMiddleware
 try:
     from local_settings import *
 except ImportError:
