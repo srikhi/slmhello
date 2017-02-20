@@ -1,0 +1,24 @@
+{% extends 'rest_framework/base.html' %}
+
+{% block title %}
+Hello SLM APIs
+{% endblock %}
+
+{% block branding %}
+<a class='navbar-brand' rel="nofollow" href='{% url "api-root" %}'>
+	Hello-SLM
+	 <span class="version">
+		  1.0.0
+         </span>
+	</a>
+{% endblock %}
+
+{% if user and not user.is_anonymous %}
+  <a>Hello, {{ user.get_full_name }}!</a>
+  <br>
+  <a href="/hellohi">Logout</a>
+{% else %}
+    <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">
+        Google-Login
+    </a>
+{% endif %}

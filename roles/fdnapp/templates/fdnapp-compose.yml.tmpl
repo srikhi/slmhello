@@ -1,0 +1,14 @@
+version: '2'
+services:
+  slmweb:
+    image: fdn:latest
+    container_name: fdnsite
+    network_mode: host
+    # restart: always
+    hostname: myhostname.fdn-private.com
+    # We map volume so that the app does not lose migration details
+    volumes:
+    #  - "{{ FDN_STATIC_CONTENT_FOLDER }}:/static_contents"
+      - "{{ FDNWEBAPP_ROOT }}/fdn:/src"
+    expose:
+      - "{{ FDNAPP_HTTP_PORT }}"

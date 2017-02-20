@@ -1,0 +1,37 @@
+---
+- name: Deploy fdnapp source code from {{FDN_SRC_ROOT}} to {{FDNWEBAPP_ROOT}}
+  synchronize:
+    src: "{{ FDN_SRC_ROOT }}"
+    dest: "{{ FDNWEBAPP_ROOT }}"
+    delete: no
+    rsync_timeout: 120
+    links: yes
+    copy_links: yes
+    rsync_opts: []
+
+- name: Generate Dockerfile file for fdn-app "{{ FDNWEBAPP_ROOT }}/Dockerfile"
+  template:
+    src: Dockerfile.tmpl
+    dest: "{{ FDNWEBAPP_ROOT }}/Dockerfile"
+
+- name: Copy requirements file
+  copy:
+    src="requirements.pip"
+    dest="{{ FDNWEBAPP_ROOT }}/requirements.pip"
+
+- name: Build dnapp container "{{ FDNWEBAPP_ROOT }}" 
+  command: >
+           /usr/bin/docker build  "{{ FDNWEBAPP_ROOT }}"
+           --tag fdn
+
+- name: Generate docker-compose file for webapp
+  template:
+    src: fdnapp-compose.yml.tmpl
+    dest: "{{ FDN_CONF }}/fdnapp-compose.yml"
+
+- name: Bring up fdn container
+  command: >
+           /usr/local/bin/docker-compose -f 
+           "{{ FDN_CONF }}/fdnapp-compose.yml" up -d
+  tags:
+    - "LAUNCH"

@@ -33,3 +33,5 @@
   command: >
            /usr/local/bin/docker-compose -f 
            "{{ SLM_CONF }}/slmwebapp-compose.yml" up -d
+  tags:
+    - "LAUNCH"

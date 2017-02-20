@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = os.path.normpath(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = ['127.0.0.1',
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/api/'
 LOGIN_EXEMPT_URLS = (
+ r'^$',
  r'^about\.html$',
  r'^legal/', # allow any URL under /legal/*
  r'^accounts/login', # allow any URL under /legal/*
@@ -107,6 +109,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -116,18 +119,24 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'slmwebsite.urls'
+USE_I18N = True
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'helloslmapp', 'templates'),
+                 os.path.join(PROJECT_DIR, 'templates')
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'builtins': [
                 'permission.templatetags.permissionif',
             ],
             'context_processors': [
+                'django.template.context_processors.i18n',
                 'django.template.context_processors.debug',
+                'django.template.context_processors.static',
+                'django.template.context_processors.media',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -146,7 +155,7 @@ WSGI_APPLICATION = 'slmwebsite.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': 'slmdb',
+         'NAME': 'slm.db',
      },
      'postgres': {
          'ENGINE': 'django.db.backends.postgresql',
@@ -190,13 +199,38 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+    )
+
 ADMINS = [('slmadmin', 'slmadmin@slmlab.com')]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Location where all static files are gathered by django in one single place.
+# This should be an initially empty destination directory for collecting your
+# static files from their permanent locations into one directory for ease of
+# deployment - it is not a place to store your static files permanently.
+
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static_contents')
+
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static_contents/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # DefaultStorageFinder is disabled by default. If enabled, it will look for
+    # static files in the default file storage as defined by the
+    # DEFAULT_FILE_STORAGE setting.
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'helloslmapp', 'staticfiles'),
+                    os.path.join(PROJECT_DIR, 'staticfiles')]
 
 REGISTRATION_OPEN = True
 

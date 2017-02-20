@@ -15,9 +15,15 @@ Including another URLconf
 """
 import permission
 import registration
+from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.views.generic.base import TemplateView
+
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 from rest_framework.routers import DefaultRouter
 from helloslmapp.views import (helloworld,
                                AuthHomePageView,
@@ -28,7 +34,8 @@ api_router = DefaultRouter()
 
 urlpatterns = [
     url(r'^mygoogauth/', include("social_django.urls", namespace="social")),
-    url(r'^$', helloworld),
+    url(r'^index\.html', TemplateView.as_view(template_name='index.html')),
+    url(r'^$', TemplateView.as_view(template_name='home.html')),
     url(r'^helloview$', HomePageView.as_view(), name='HelloViewIsMyName'),
     url(r'^authhello$', AuthHomePageView.as_view(), name='AuthenticHello'),
     url(r'^admin/', admin.site.urls),
@@ -38,3 +45,13 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls',
         namespace='rest_framework'))
 ]
+
+# Django doesn't get requests for static assets in production, however, in dev
+# mode, we just let Django serve our static content. We use
+# staticfiles_urlpatterns in urls.py to tell Django to serve requests
+# for static/*.
+if settings.DEBUG:
+    urlpatterns +=  static(settings.STATIC_URL,
+                           document_root=settings.STATIC_ROOT,
+                           show_indexes=True)
+urlpatterns += staticfiles_urlpatterns()
