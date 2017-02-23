@@ -1,0 +1,14 @@
+version: '2'
+services:
+  crudweb:
+    image: crudweb
+    container_name: crudwebapp
+    network_mode: host
+    restart: always
+    hostname: slmweb.slmlab.com
+    # We map volume so that the app does not lose migration details
+    volumes:
+      - "{{ CRUD_STATIC_DATA }}:/static-root"
+      - "{{ CRUDWEBAPP_ROOT }}/crud:/src"
+    expose:
+      - "{{ CRUDWEBAPP_HTTP_PORT }}"

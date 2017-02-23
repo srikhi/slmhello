@@ -1,0 +1,37 @@
+---
+- name: Deploy webapp source code to dest "{{ CRUDWEBAPP_ROOT }}"
+  synchronize:
+    src: "{{ CRUD_SRC_ROOT }}"
+    dest: "{{ CRUDWEBAPP_ROOT }}"
+    delete: no
+    rsync_timeout: 120
+    links: yes
+    copy_links: yes
+    rsync_opts: []
+
+- name: Generate Dockerfile file as "{{ CRUDWEBAPP_ROOT }}/Dockerfile"
+  template:
+    src: Dockerfile.tmpl
+    dest: "{{ CRUDWEBAPP_ROOT }}/Dockerfile"
+
+- name: Copy requirements file to "{{ CRUDWEBAPP_ROOT }}/requirements.pip"
+  copy:
+    src="requirements.pip"
+    dest="{{ CRUDWEBAPP_ROOT }}/requirements.pip"
+
+- name: Build webapp container from root "{{ CRUDWEBAPP_ROOT }}"
+  command: >
+           /usr/bin/docker build  "{{ CRUDWEBAPP_ROOT }}"
+           --tag crudweb
+
+- name: Generate docker-compose "{{ CRUD_CONF }}/crudwebapp-compose.yml"
+  template:
+    src: crudwebapp-compose.yml.tmpl
+    dest: "{{ CRUD_CONF }}/crudwebapp-compose.yml"
+
+- name: Bring up crudweb container
+  command: >
+           /usr/local/bin/docker-compose -f 
+           "{{ CRUD_CONF }}/crudwebapp-compose.yml" up -d
+  tags:
+    - "LAUNCH"

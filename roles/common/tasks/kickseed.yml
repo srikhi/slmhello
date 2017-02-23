@@ -36,6 +36,11 @@
 - name: Ensure common workspace directories are present
   file: path="{{ item }}" state=directory owner="slmuser"
   with_items:
+    - "{{ CRUD_DEPLOYMENT_ROOT }}"
+    - "{{ CRUD_DATA }}"
+    - "{{ CRUD_STATIC_DATA }}"
+    - "{{ CRUD_CONF }}"
+    - "{{ CRUDWEBAPP_ROOT }}"
     - "{{ SLM_DEPLOYMENT_ROOT }}"
     - "{{ SLM_DATA }}"
     - "{{ SLM_CONF }}"
