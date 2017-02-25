@@ -1,0 +1,3 @@
+---
+- include: kickseed.yml
+  when: KICKSEED is defined 

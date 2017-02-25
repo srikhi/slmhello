@@ -1,0 +1,14 @@
+EXAMPLE_APP_DRF_ROOT: "/opt/launchpad/examples/drf"
+# Folders and Workspace
+EXAMPLE_APP_DRF_SRC: "{{ EXAMPLE_APP_DRF_ROOT }}/src"
+EXAMPLE_APP_DRF_DATA: "{{ EXAMPLE_APP_DRF_ROOT }}/data"
+EXAMPLE_APP_DRF_STATIC_DATA: "{{ EXAMPLE_APP_DRF_DATA }}/static-root"
+EXAMPLE_APP_DRF_CONF: "{{ EXAMPLE_APP_DRF_ROOT }}/conf"
+EXAMPLE_APP_DRF_LOGS: "{{ EXAMPLE_APP_DRF_ROOT }}/logs"
+
+# Local Source Code Location
+EXAMPLE_APP_DRF_DEV_SRC: "{{ DEV_SRC_ROOT }}/src/projects/examples/drf"
+
+DRF_EXAMPLE_APP_HTTP_PORT: "80"
+APP_OWNER_USER: "appu"
+APP_OWNER_GROUP: "appg"

@@ -1,0 +1,18 @@
+FROM python:2.7
+ENV PYTHONUNBUFFERED 1
+
+EXPOSE 80
+RUN mkdir /config
+RUN mkdir /static-root
+RUN mkdir /src
+  
+ADD requirements.pip /config/
+
+WORKDIR /usr/src/python
+RUN pip install -r /config/requirements.pip  
+
+WORKDIR /src
+
+ENV DATABASE_TYPE postgres
+
+ENTRYPOINT ["/bin/bash", "/src/docker-entrypoint.sh"]

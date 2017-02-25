@@ -1,0 +1,52 @@
+---
+- name: Ensure common workspace directories are present                         
+  file: path="{{ item }}" state=directory owner="{{ APP_OWNER_USER}}"           
+  with_items:                                                                   
+    - "{{ EXAMPLE_APP_DRF_ROOT }}"
+    - "{{ EXAMPLE_APP_DRF_SRC }}"
+    - "{{ EXAMPLE_APP_DRF_DATA }}"
+    - "{{ EXAMPLE_APP_DRF_STATIC_DATA }}"
+    - "{{ EXAMPLE_APP_DRF_CONF }}"
+    - "{{ EXAMPLE_APP_DRF_LOGS }}"
+
+- name: Deploy app source code to dest "{{ EXAMPLE_APP_DRF_SRC }}"
+  synchronize:
+    src: "{{ EXAMPLE_APP_DRF_DEV_SRC }}/"
+    dest: "{{ EXAMPLE_APP_DRF_SRC }}"
+    delete: no
+    rsync_timeout: 120
+    links: yes
+    copy_links: yes
+    rsync_opts: []
+
+- name: Generate "{{ EXAMPLE_APP_DRF_ROOT }}/docker-entrypoint.sh"
+  template:
+    src: docker-entrypoint.sh.tmpl
+    dest: "{{ EXAMPLE_APP_DRF_SRC }}/docker-entrypoint.sh"
+
+- name: Generate Dockerfile file as "{{ EXAMPLE_APP_DRF_ROOT }}/Dockerfile"
+  template:
+    src: Dockerfile.tmpl
+    dest: "{{ EXAMPLE_APP_DRF_CONF }}/Dockerfile"
+
+- name: Copy requirements file to "{{ EXAMPLE_APP_DRF_CONF }}/requirements.pip"
+  copy:
+    src=requirements.pip
+    dest="{{ EXAMPLE_APP_DRF_CONF }}/requirements.pip"
+
+- name: Build webapp container from root "{{ EXAMPLE_APP_DRF_CONF }}"
+  command: >
+           /usr/bin/docker build  "{{ EXAMPLE_APP_DRF_CONF }}"
+           --tag drfweb
+
+- name: Generate docker-compose "{{ EXAMPLE_APP_DRF_CONF }}/docker-compose.yml"
+  template:
+    src: docker-compose.yml.tmpl
+    dest: "{{ EXAMPLE_APP_DRF_CONF }}/docker-compose.yml"
+
+- name: Bring up drfweb container
+  command: >
+           /usr/local/bin/docker-compose -f 
+           "{{ EXAMPLE_APP_DRF_CONF }}/docker-compose.yml" up -d
+  tags:
+    - "LAUNCH"

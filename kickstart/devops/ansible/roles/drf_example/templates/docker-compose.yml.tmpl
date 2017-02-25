@@ -1,0 +1,14 @@
+version: '2'
+services:
+  drfweb:
+    image: drfweb
+    container_name: drfwebapp
+    network_mode: host
+    restart: always
+    hostname: drf-example.slmlab.com
+    # We map volume so that the app does not lose migration details
+    volumes:
+      - "{{ EXAMPLE_APP_DRF_STATIC_DATA }}:/static-root"
+      - "{{ EXAMPLE_APP_DRF_SRC }}:/src"
+    expose:
+      - "{{ DRF_EXAMPLE_APP_HTTP_PORT }}"

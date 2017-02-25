@@ -1,0 +1,29 @@
+---
+
+- name: Update kernel params
+  sysctl: name={{ item.name }} value={{ item.value }} state=present
+  with_items:
+    - { name: vm.panic_on_oom, value: 1 }
+    - { name: kernel.panic, value: 10 }
+
+- name: Ensure apt packages are installed
+  apt: pkg={{ item }} state=installed update_cache=false
+  with_items:
+    - "docker-engine=1.12.1-0~trusty"
+    - "python-virtualenv=1.11.4-1"
+    - "python-yaml"
+  tags:
+    - kickseed
+
+- name: Ensure pip packages are installed
+  pip: name={{ item }}
+  with_items:
+    - "Django==1.10.5"
+    - "docker-compose==1.8.1"
+    - "virtualenv==1.11.4"
+    - "PyYAML==3.10"
+  tags:
+    - kickseed
+
+- name: Ensure docker is in a running state
+  service: name=docker state=started
