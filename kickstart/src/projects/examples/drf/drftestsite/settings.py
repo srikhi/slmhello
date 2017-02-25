@@ -27,7 +27,7 @@ DEBUG = True
 
 ADMINS = [('drftoyadmin', 'drftoyadmin@slmlab.com')]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
     'drftoyapp',
 ]
 
@@ -61,6 +62,19 @@ REST_FRAMEWORK = {
     ],
     'PAGE_SIZE': 10
 }
+
+SWAGGER_SETTINGS = {
+    'LOGIN_URL': 'rest_framework:login',
+    'LOGOUT_URL': 'rest_framework:logout',
+    'DOC_EXPANSION': 'list',
+    'api_path': '/api/',
+    'is_authenticated': True,
+    'is_superuser': True,
+    'permission_denied_handler': 'django.contrib.auth.views.login',
+    'USE_SESSION_AUTH': True,
+    'APIS_SORTER': 'alpha'
+}
+LOGIN_REDIRECT_URL = '/login/'
 
 TEMPLATES = [
     {

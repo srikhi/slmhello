@@ -6,3 +6,4 @@ django-permission==0.9.3
 django-filter==1.0.1
 djangorestframework==3.5.3
 rest-framework-generic-relations==1.1.0
+django-rest-swagger==2.1.1

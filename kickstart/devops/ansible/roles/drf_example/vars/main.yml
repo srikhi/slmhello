@@ -1,4 +1,4 @@
-EXAMPLE_APP_DRF_ROOT: "/opt/launchpad/examples/drf"
+EXAMPLE_APP_DRF_ROOT: "/slm/launchpad/examples/drf"
 # Folders and Workspace
 EXAMPLE_APP_DRF_SRC: "{{ EXAMPLE_APP_DRF_ROOT }}/src"
 EXAMPLE_APP_DRF_DATA: "{{ EXAMPLE_APP_DRF_ROOT }}/data"

@@ -20,4 +20,4 @@ ansible-playbook --extra-vars "{ $ANSIBLE_BASE_VARS }" \
     --connection=local ${ANSIBLE_PLAYBOOK} \
     --skip-tags="LAUNCH"
 
-sudo docker-compose -f /opt/launchpad/examples/drf/conf/docker-compose.yml up
+sudo docker-compose -f /slm/launchpad/examples/drf/conf/docker-compose.yml up
